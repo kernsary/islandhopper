@@ -13,7 +13,7 @@ db.islands.insertMany([
 
   {
     "name": "Skye",
-    "region": "Skye Group",
+    "region": "Skye group",
     "area": 165625,
     "population": 10008,
     "information": "Skye has spectacular mountains and cliffs, and is the most popular Scottish island for tourists.",
@@ -31,7 +31,7 @@ db.islands.insertMany([
 
   {
     "name": "Mull",
-    "region": "Mull Group",
+    "region": "Mull group",
     "area": 87535,
     "population": 2800,
     "information": ,
