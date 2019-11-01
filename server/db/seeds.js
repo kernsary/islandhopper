@@ -7,7 +7,7 @@ db.islands.insertMany([
     "region": "Outer Hebrides",
     "area": 217898,
     "population": 21031,
-    "information": ,
+    "information": "Lewis is the north part of the island and Harris, with its wild hill country, is in the south. Both parts have amazing sandy beaches.",
     "image":
   },
 
@@ -25,7 +25,7 @@ db.islands.insertMany([
     "region": "Shetland",
     "area": 96879,
     "population": 18765,
-    "information": ,
+    "information": "Mainland has an incredible number of inlets and peninsulas and lots of spectacular cliffs.",
     "image":
   },
 
@@ -34,7 +34,7 @@ db.islands.insertMany([
     "region": "Mull group",
     "area": 87535,
     "population": 2800,
-    "information": ,
+    "information": "Mull has lots of hills and some huge cliffs, and is known for wildlife and for the painted houses in Tobermory.",
     "image":
   },
 
@@ -43,7 +43,7 @@ db.islands.insertMany([
     "region": "Islay group",
     "area": 61956,
     "population": 3228,
-    "information": ,
+    "information": "Islay is famous for its whisky distilleries and is also an increasingly popular tourist destination, with lots of beaches and wildlife.",
     "image":
   },
 
@@ -52,7 +52,7 @@ db.islands.insertMany([
     "region": "Orkney",
     "area": 52325,
     "population": 17162,
-    "information": ,
+    "information": "Mainland is full of archaeological treasures like the Skara Brae stone-age village, standing stones and burial mounds.",
     "image":
   },
 
@@ -61,7 +61,7 @@ db.islands.insertMany([
     "region": "Firth of Clyde",
     "area": 43201,
     "population": 4629,
-    "information": ,
+    "information": "Arran is the perfect holiday island with jagged mountains, castles, beaches and attractive villages." ,
     "image":
   },
 
@@ -70,7 +70,7 @@ db.islands.insertMany([
     "region": "Islay Group",
     "area": 36692,
     "population": 196,
-    "information": ,
+    "information": "Jura is very empty with hardly any inhabitants despite being one of the large islands. There is a huge amount of wild country to explore.",
     "image":
   },
 
@@ -79,7 +79,7 @@ db.islands.insertMany([
     "region": "Outer Hebrides",
     "area": 32026,
     "population": 1754,
-    "information": ,
+    "information": "South Uist is a perfect Hebridean island, with miles of sandy beaches, flower-strewn machair, and rugged hills above the wild east coast.",
     "image":
   },
 
@@ -89,7 +89,7 @@ db.islands.insertMany([
     "area": 30305,
     "population": 1254,
     "information": ,
-    "image":
+    "image": "North Uist includes an incredible landscape of interconnecting lochs, but also has great beaches."
   },
 
   {
@@ -97,7 +97,7 @@ db.islands.insertMany([
     "region": "Shetland",
     "area": 21211,
     "population": 966,
-    "information": ,
+    "information": "Yell is a wild, atmospheric, moorland island, alive with otters.",
     "image":
   },
 
@@ -106,7 +106,7 @@ db.islands.insertMany([
     "region": "Orkney",
     "area": 13458,
     "population": 419,
-    "information": ,
+    "information": "Hoy is the only hilly island in Orkney and has huge sandstone cliffs, including the famous Old Man sea stack.",
     "image":
   },
 
@@ -115,7 +115,7 @@ db.islands.insertMany([
     "region": "Firth of Clyde",
     "area": 12217,
     "population": 6498,
-    "information": ,
+    "information": "Bute is centred on the traditional seaside resort of Rothesay and has lots to see including the beach at Ettrick Bay where the cafe sells giant cakes.",
     "image":
   },
 
@@ -124,7 +124,7 @@ db.islands.insertMany([
     "region": "Shetland",
     "area": 12068,
     "population": 632,
-    "information": ,
+    "information": "Unst is the northernmost inhabited island in Britain and has a very distinctive peaceful feel to it.",
     "image":
   },
 
@@ -133,7 +133,7 @@ db.islands.insertMany([
     "region": "Skye group",
     "area": 10463,
     "population": 22,
-    "information": ,
+    "information": "Rum is like a child's drawing of an island with soaring mountains, a castle and beaches. Most of it is managed as a nature reserve." ,
     "image":
   },
 
@@ -142,7 +142,7 @@ db.islands.insertMany([
     "region": "Outer Hebrides",
     "area": 8203,
     "population": 1303,
-    "information": ,
+    "information": "Benbecula is like a stepping stone between North Uist and South Uist. It is very flat with one round hill in the middle, like a fried egg.",
     "image":
   },
 
@@ -151,7 +151,7 @@ db.islands.insertMany([
     "region": "Mull group",
     "area": 7834,
     "population": 653,
-    "information": ,
+    "information": "Tiree is incredibly flat and has sandy beaches almost all the way round it, which is why it is big centre for surfing. It has also got distinctive black and white houses.",
     "image":
   },
 
@@ -160,7 +160,7 @@ db.islands.insertMany([
     "region": "Mull group",
     "area": 7685,
     "population": 195,
-    "information": ,
+    "information": "Coll looks dark and craggy from the ferry and is generally rugged but it has great beaches.",
     "image":
   },
 
@@ -169,7 +169,7 @@ db.islands.insertMany([
     "region": "Skye group",
     "area": 6405,
     "population": 161,
-    "information": ,
+    "information": "Raasay is much quieter than Skye and has a distinctive landscape. It is famous as the birthplace of the poet Somhairle Mac Gill-Eain.",
     "image":
   },
 
@@ -178,7 +178,7 @@ db.islands.insertMany([
     "region": "Outer Hebrides",
     "area": 5875,
     "population": 1174,
-    "information": ,
+    "information": "Barra is a self-contained world and is a great place to visit. It is best known for the historic Kisimul Castle in the middle of the main bay.",
     "image":
   },
 
@@ -187,7 +187,7 @@ db.islands.insertMany([
     "region": "Orkney",
     "area": 5043,
     "population": 494,
-    "information": ,
+    "information": "Sanday, as the name suggests, has lots of beaches! It looks on the map like a giant fossilised bat.",
     "image":
   },
 
