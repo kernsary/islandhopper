@@ -9,6 +9,7 @@
 
 <script>
 import {LMap, LTileLayer, LMarker } from 'vue2-leaflet';
+import {eventBus} from "../main.js"
 
 export default {
   name: 'map-component',
@@ -17,21 +18,6 @@ export default {
     LMap,
     LTileLayer,
     LMarker
-  },
-
-  methods: {
-    islandLabels = function (islands) {
-
-      islands.forEach((island) => {
-        console.log(island.lat)
-        L.circle([island.lat, island.long], {
-          color: 'red',
-          fillColor: '#f03',
-          fillOpacity: 0.5,
-          radius: 2500
-        }).addTo(this.myMap);
-      });
-    }
   },
 
   mounted() {
@@ -45,8 +31,33 @@ export default {
       accessToken: 'pk.eyJ1IjoibWFkbWlrZTcxNiIsImEiOiJjazJrOWN4N2IwMzk5M21udDRzanZvNnFuIn0.q-CVhpCwm3WYFcsh-xlIVw'
     }).addTo(this.myMap);
 
-    this.islandLabels(this.islands);
-  }
+    // eventBus.$on("islands-loaded", ()=>{
+    //   console.log("islands loaded", this.islands);
+    //   this.islandLabels(this.islands);
+    // })
+  },
+
+  methods: {
+    islandLabels(islands) {
+
+      islands.forEach((island) => {
+        console.log(island.lat);
+        L.circle([island.lat, island.long], {
+          color: 'red',
+          fillColor: '#f03',
+          fillOpacity: 0.5,
+          radius: 2500
+        }).addTo(this.myMap);
+      });
+    }
+  },
+  watch: {
+    islands: function(newValue) {
+      this.islandLabels(newValue)
+    }
+  },
+
+
 
 
 

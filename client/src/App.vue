@@ -6,7 +6,7 @@
 
     <div class="main-container">
 
-      <island-map></island-map>
+      <island-map :islands="islands"></island-map>
       <islands-in-region-list :regions="selectedRegion"> </islands-in-region-list>
       <island-details :island="selectedIsland"> </island-details>
 
@@ -30,7 +30,7 @@ export default {
     islands: [],
     selectedRegion: "",
     selectedIsland: ""
-  };
+  }
 },
 mounted(){
   eventBus.$on("region-selected", (region) => {
@@ -50,7 +50,10 @@ mounted(){
   methods: {
     fetchData(){
         IslandService.getIslands()
-        .then(islands => this.islands = islands);
+        .then(islands => {
+          this.islands = islands
+          eventBus.$emit("islands-loaded")
+        });
   }
 },
 

@@ -9,7 +9,7 @@ import { eventBus } from "../main.js";
 
 export default {
   name: 'list-item',
-  props: ['island'],
+  props: ['islands'],
   methods: {
     handleClick(){
       eventBus.$emit("island-selected", this.island)
