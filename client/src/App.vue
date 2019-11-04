@@ -7,8 +7,9 @@
     <div class="main-container">
 
       <island-map :islands="islands"></island-map>
-      <islands-in-region-list :regions="selectedRegion"> </islands-in-region-list>
-      <island-details :island="selectedIsland"> </island-details>
+      <island-grid :selectedIsland="selectedIsland" v-if="selectedIsland"></island-grid>
+      <!-- <islands-in-region-list :regions="selectedRegion"> </islands-in-region-list>
+      <island-details :island="selectedIsland"> </island-details> -->
 
     </div>
 
@@ -18,6 +19,7 @@
 
 <script>
 import MapComponent from "./components/MapComponent.vue";
+import IslandGrid from "./components/IslandGrid.vue";
 import IslandRegionsList from "./components/IslandRegionsList.vue";
 import IslandDetails from "./components/IslandDetails.vue";
 import IslandService from './services/IslandService.js';
@@ -29,7 +31,7 @@ export default {
     return {
     islands: [],
     selectedRegion: "",
-    selectedIsland: ""
+    selectedIsland: []
   }
 },
 mounted(){
@@ -60,7 +62,8 @@ mounted(){
 components: {
   'islands-in-region-list': IslandRegionsList,
   'island-details': IslandDetails,
-  'island-map': MapComponent
+  'island-map': MapComponent,
+  'island-grid': IslandGrid
 }
 
 }

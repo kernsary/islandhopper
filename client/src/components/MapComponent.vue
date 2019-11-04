@@ -1,7 +1,8 @@
 <template lang="html">
 
   <div id="mapid">
-    <LMap ref="myMap">
+    <LMap @click="mapClick" ref="myMap">
+      <!-- <LTileLayer :url="url"></l-tile-layer> -->
     </LMap>
   </div>
 
@@ -38,6 +39,9 @@ export default {
   },
 
   methods: {
+    mapClick(){
+      console.log("map is clicked");
+    },
     islandLabels(islands) {
 
       islands.forEach((island) => {
@@ -47,7 +51,13 @@ export default {
           fillColor: '#f03',
           fillOpacity: 0.5,
           radius: 2500
-        }).addTo(this.myMap).bindPopup(island.name);
+        }).addTo(this.myMap).bindPopup(island.name).on("click", (event)=>{
+          eventBus.$emit("island-selected", island)
+        });
+
+        // const circleClick =  {
+        //   eventBus.$emit("island-selected", island)
+        // }
       });
     }
   },

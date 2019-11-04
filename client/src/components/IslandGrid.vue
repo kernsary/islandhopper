@@ -1,21 +1,26 @@
 <template lang="html">
-  <div id="islandGrid">
-		<div class="island" v-for="island in islands">
-			<h1>Region: {{ island.region }}</h1>
-      <h3>Name: {{island.name}}</h3>
-			<p>Area: {{ island.area }}</p>
-			<p>Population: {{ island.population }}</p>
-			<p>Facts: {{ island.information }}</p>
+  <div id="islandGrid" v-if="seen">
+		<div class="island" v-on:click="seen = !seen">
+			<h1>Region: {{ selectedIsland.region }}</h1>
+      <h3>Name: {{selectedIsland.name}}</h3>
+			<p>Area: {{ selectedIsland.area }}</p>
+			<p>Population: {{ selectedIsland.population }}</p>
+			<p>Facts: {{ selectedIsland.information }}</p>
 		</div>
 	</div>
 </template>
 
 <script>
 import IslandService from '../services/IslandService'
+import { eventBus } from '../main.js'
 export default {
 
 name: "island-grid",
-props: ["islands"],
+data(){
+  return{
+  }
+},
+props: ["selectedIsland"],
 filters: {
   format(value){
     return new Date(value).toLocaleString().substring(0, 10);
