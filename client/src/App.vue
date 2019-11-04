@@ -2,7 +2,7 @@
 
   <div>
 
-    <h1>Islands Of Scotland...Bitch</h1>
+    <h1>Islands Of Scotland</h1>
 
     <div class="main-container">
 
@@ -20,6 +20,7 @@
 import MapComponent from "./components/MapComponent.vue";
 import IslandRegions from "./components/IslandRegions.vue";
 import IslandDetails from "./components/IslandFDetails.vue";
+import IslandService from './services/IslandService.js';
 import { eventBus } from "./main.js";
 
 export default {
@@ -39,12 +40,20 @@ mounted(){
   eventBus.$on("island-selected", (island) => {
     this.selectedIsland = island;
     console.log("selectedIsland", this.selectedIsland);
-  });
+  }),
 
-  fetch("../")
-  .then(data => data.json())
-  .then(islands => this.islands = islands)
+  {
+    this.fetchData();
+  },
+  methods: {
+    fetchData(){
+        IslandService.getIslands()
+        .then(islands => this.islands = islands);
+  }
+ }
+
 }
+
 </script>
 
 <style>
