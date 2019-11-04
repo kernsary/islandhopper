@@ -1,5 +1,5 @@
 <template lang="html">
-  <div>
+  <div id="islands-in-region">
 
     <ul>
       <liv-for="(island, index) in region" :island="island" :key="index"> </li>

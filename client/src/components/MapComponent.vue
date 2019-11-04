@@ -4,6 +4,11 @@
 
 <script>
 export default {
+  name: 'map-component',
+  props: ['islands'],
+  components: {
+    'islands-in-region-list': IslandRegionsList
+  }
 }
 </script>
 

@@ -1,5 +1,5 @@
 <template lang="html">
-  <div v-if="island">
+  <div v-if="island" id="island-details">
 
     <h2>{{ island.name }}</h2>
     <h3>{{ island.population }}</h3>
