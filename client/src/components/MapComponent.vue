@@ -47,7 +47,7 @@ export default {
           fillColor: '#f03',
           fillOpacity: 0.5,
           radius: 2500
-        }).addTo(this.myMap);
+        }).addTo(this.myMap).bindPopup(island.name);
       });
     }
   },

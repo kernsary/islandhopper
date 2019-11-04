@@ -12,17 +12,18 @@ db.islands.insertMany([
     "image": `https://s0.geograph.org.uk/photos/15/29/152926_dcccf7f2.jpg`,
     "lat": 58.25,
     "long": -6.67
+  },
+
+  {
+    "name": "Skye",
+    "region": "Skye group",
+    "area": 165625,
+    "population": 10008,
+    "information": "Skye has spectacular mountains and cliffs, and is the most popular Scottish island for tourists.",
+    "image": `https://s0.geograph.org.uk/photos/52/04/520494_4c93ef63.jpg`,
+    "lat": 57.30,
+    "long": -6.23
   }
-  // ,
-//
-//   {
-//     "name": "Skye",
-//     "region": "Skye group",
-//     "area": 165625,
-//     "population": 10008,
-//     "information": "Skye has spectacular mountains and cliffs, and is the most popular Scottish island for tourists.",
-//     "image": `https://s0.geograph.org.uk/photos/52/04/520494_4c93ef63.jpg`
-//   },
 //
 //   {
 //     "name": "Shetland Mainland",
