@@ -424,6 +424,10 @@ db.islands.insertMany([
     "population": 8,
     "information": "Oronsay used to be a religious centre. The only way to get to it is by walking or driving across a huge beach from Colonsay at low tide.",
     "image": `https://s0.geograph.org.uk/geophotos/01/85/45/1854558_abe50de2.jpg`
+  },
+
+  {
+
   }
 
 ]);
