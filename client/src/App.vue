@@ -7,7 +7,7 @@
     <div class="main-container">
 
       <map></map>
-      <islands-in-region-list :regions="regions"> </islands-in-region-list>
+      <islands-in-region-list :regions="selectedRegion"> </islands-in-region-list>
       <island-details :island="selectedIsland"> </island-details>
 
     </div>
