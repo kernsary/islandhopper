@@ -1,9 +1,10 @@
 <template>
 
-  <div>
-
-    <h1>Islands Of Scotland</h1>
-
+  <div class="body-wrapper">
+    <div class="nav-wrapper">
+      <h1>Islandhopper</h1>
+      <h2>Which island are you?</h2>
+    </div>
     <div class="main-container">
 
       <island-map :islands="islands"></island-map>
@@ -31,21 +32,21 @@ export default {
   name: 'app',
   data(){
     return {
-    islands: [],
-    selectedRegion: "",
-    selectedIsland: false
-  }
-},
-mounted(){
-  eventBus.$on("region-selected", (region) => {
-    this.selectedRegion = region;
-    console.log("selectedRegion", this.selectedRegion);
-  }),
+      islands: [],
+      selectedRegion: "",
+      selectedIsland: false
+    }
+  },
+  mounted(){
+    eventBus.$on("region-selected", (region) => {
+      this.selectedRegion = region;
+      console.log("selectedRegion", this.selectedRegion);
+    }),
 
-  eventBus.$on("island-selected", (island) => {
-    this.selectedIsland = island;
-    console.log("selectedIsland", this.selectedIsland);
-  }),
+    eventBus.$on("island-selected", (island) => {
+      this.selectedIsland = island;
+      console.log("selectedIsland", this.selectedIsland);
+    }),
 
 
     this.fetchData()
@@ -53,26 +54,36 @@ mounted(){
 
   methods: {
     fetchData(){
-        IslandService.getIslands()
-        .then(islands => {
-          this.islands = islands
-          eventBus.$emit("islands-loaded")
-        });
-  }
-},
+      IslandService.getIslands()
+      .then(islands => {
+        this.islands = islands
+        eventBus.$emit("islands-loaded")
+      });
+    }
+  },
 
-components: {
-  'islands-in-region-list': IslandRegionsList,
-  'island-details': IslandDetails,
-  'island-map': MapComponent,
-  'island-grid': IslandGrid,
-  // 'what-island-quiz': WhatIslandQuiz
-}
+  components: {
+    'islands-in-region-list': IslandRegionsList,
+    'island-details': IslandDetails,
+    'island-map': MapComponent,
+    'island-grid': IslandGrid,
+    // 'what-island-quiz': WhatIslandQuiz
+  }
 
 }
 
 </script>
 
 <style>
+
+.body-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-wrapper {
+  display: flex;
+  flex-direction: row;
+}
 
 </style>

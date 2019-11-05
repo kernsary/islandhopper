@@ -10,7 +10,7 @@ db.islands.insertMany([
     "population": 21031,
     "information": "Lewis is the north part of the island and Harris, with its wild hill country, is in the south. Both parts have amazing sandy beaches.",
     "image": `https://s0.geograph.org.uk/photos/15/29/152926_dcccf7f2.jpg`,
-    "lat": 58.2436,
+    "lat": 58.1,
     "long": -6.6672
   },
 
@@ -494,8 +494,8 @@ db.islands.insertMany([
       "population": 291,
       "information": "Scalpay is connected to Harris by a bridge. It is very rocky but has a high population for its size because of its fishing harbour.",
       "image": `https://s0.geograph.org.uk/photos/56/45/564519_14fd32d0.jpg`,
-      "lat": 57.2878,
-      "long": -5.9587
+      "lat": 57.8667,
+      "long": -6.6667
     },
 
     {
