@@ -12,7 +12,7 @@
         <island-details :selectedIsland="selectedIsland" v-if="selectedIsland"></island-details>
       </div>
       <div class="quiz" :selectedView="selectedView" v-if="selectedView === 'quiz'">
-          <!-- <what-island-quiz></what-island-quiz> -->
+        <!-- <what-island-quiz></what-island-quiz> -->
       </div>
     </div>
   </div>
@@ -23,6 +23,7 @@
 import MapComponent from "./components/MapComponent.vue";
 import WelcomeGuide from "./components/WelcomeGuide.vue";
 import IslandDetails from "./components/IslandDetails.vue";
+import AreaChart from "./components/AreaChart.vue";
 import IslandRegionsList from "./components/IslandRegionsList.vue";
 import IslandService from './services/IslandService.js';
 import { eventBus } from "./main.js";
@@ -34,7 +35,10 @@ export default {
       islands: [],
       selectedRegion: "",
       selectedIsland: false,
-      selectedView: "home"
+      selectedView: "home",
+      areas: [
+        ["Island", "Area (hectares)"]
+      ]
     }
   },
   mounted(){
@@ -49,7 +53,9 @@ export default {
     }),
 
 
-    this.fetchData()
+    this.fetchData(),
+
+    this.addAreas()
   },
 
   methods: {
@@ -60,6 +66,12 @@ export default {
         eventBus.$emit("islands-loaded")
       });
     },
+
+    // addAreas(){
+    //   this.islands.forEach(island){
+    //     this.areas.push([island.name, island.area])
+    //   }
+    // },
 
     homeClick(){
       this.selectedView = "home";
@@ -75,6 +87,7 @@ export default {
     'welcome-guide': WelcomeGuide,
     'island-map': MapComponent,
     'island-details': IslandDetails,
+    'area-chart': AreaChart
     // 'what-island-quiz': WhatIslandQuiz
   }
 
