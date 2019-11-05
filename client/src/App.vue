@@ -3,7 +3,7 @@
   <div class="body-wrapper">
     <div class="nav-wrapper">
       <h1>Islandhopper</h1>
-      <h2>Which island are you?</h2>
+      <h1>Which island are you?</h1>
     </div>
     <div class="main-container">
 
@@ -82,6 +82,11 @@ export default {
 }
 
 .nav-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-container {
   display: flex;
   flex-direction: row;
 }

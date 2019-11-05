@@ -3,14 +3,14 @@
   <div id="mapid">
     <LMap
     @click="mapClick"
-    :zoom=6
-    :center="[58, -4]">
+    :zoom=5.5
+    :center="[58.25, -4]">
       <LTileLayer :url="'http://{s}.tile.osm.org/{z}/{x}/{y}.png'"></LTileLayer>
       <LCircle
       v-for="island in islands"
       :lat-lng="[island.lat, island.long]"
       :radius="2500"
-      @click="islandSelected">
+      @click="islandSelected(island)">
       <LPopup>{{island.name}}</LPopup>
       </LCircle>
     </LMap>
@@ -54,11 +54,8 @@ export default {
     mapClick(){
       console.log("map is clicked");
     },
-    islandSelected(event) {
-      event.target.openPopup()
-      // console.log(event);
-      // openPopup()
-      // eventBus.$emit("island-selected", island);
+    islandSelected(island) {
+      eventBus.$emit("island-selected", island);
     }
     // islandLabels(islands) {
     //
@@ -108,7 +105,7 @@ export default {
 
 #mapid {
   height: 500px;
-  width: 450px;
+  width: 420px;
 }
 
 </style>
