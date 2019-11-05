@@ -8,7 +8,7 @@
     <div class="main-container">
 
       <island-map :islands="islands"></island-map>
-      <island-grid :selectedIsland="selectedIsland" v-if="selectedIsland"></island-grid>
+      <island-details :selectedIsland="selectedIsland" v-if="selectedIsland"></island-details>
       <!-- <what-island-quiz></what-island-quiz> -->
     </div>
   </div>
@@ -17,9 +17,8 @@
 <script>
 // import WhatIslandQuiz from './components/WhatIslandQuiz.vue';
 import MapComponent from "./components/MapComponent.vue";
-import IslandGrid from "./components/IslandGrid.vue";
-import IslandRegionsList from "./components/IslandRegionsList.vue";
 import IslandDetails from "./components/IslandDetails.vue";
+import IslandRegionsList from "./components/IslandRegionsList.vue";
 import IslandService from './services/IslandService.js';
 import { eventBus } from "./main.js";
 
@@ -59,9 +58,8 @@ export default {
 
   components: {
     'islands-in-region-list': IslandRegionsList,
-    'island-details': IslandDetails,
     'island-map': MapComponent,
-    'island-grid': IslandGrid,
+    'island-details': IslandDetails,
     // 'what-island-quiz': WhatIslandQuiz
   }
 
