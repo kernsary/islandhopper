@@ -8,6 +8,7 @@
 
       <island-map :islands="islands"></island-map>
       <island-grid :selectedIsland="selectedIsland" v-if="selectedIsland"></island-grid>
+      <!-- <what-island-quiz></what-island-quiz> -->
       <!-- <islands-in-region-list :regions="selectedRegion"> </islands-in-region-list>
       <island-details :island="selectedIsland"> </island-details> -->
 
@@ -18,6 +19,7 @@
 </template>
 
 <script>
+// import WhatIslandQuiz from './components/WhatIslandQuiz.vue';
 import MapComponent from "./components/MapComponent.vue";
 import IslandGrid from "./components/IslandGrid.vue";
 import IslandRegionsList from "./components/IslandRegionsList.vue";
@@ -31,7 +33,7 @@ export default {
     return {
     islands: [],
     selectedRegion: "",
-    selectedIsland: []
+    selectedIsland: false
   }
 },
 mounted(){
@@ -63,7 +65,8 @@ components: {
   'islands-in-region-list': IslandRegionsList,
   'island-details': IslandDetails,
   'island-map': MapComponent,
-  'island-grid': IslandGrid
+  'island-grid': IslandGrid,
+  // 'what-island-quiz': WhatIslandQuiz
 }
 
 }
