@@ -10,8 +10,6 @@
       <island-map :islands="islands"></island-map>
       <island-grid :selectedIsland="selectedIsland" v-if="selectedIsland"></island-grid>
       <!-- <what-island-quiz></what-island-quiz> -->
-      <!-- <islands-in-region-list :regions="selectedRegion"> </islands-in-region-list>
-      <island-details :island="selectedIsland"> </island-details> -->
 
     </div>
 
@@ -26,6 +24,7 @@ import IslandGrid from "./components/IslandGrid.vue";
 import IslandRegionsList from "./components/IslandRegionsList.vue";
 import IslandDetails from "./components/IslandDetails.vue";
 import IslandService from './services/IslandService.js';
+import QuizService from './services/QuizService.js';
 import { eventBus } from "./main.js";
 
 export default {
@@ -34,7 +33,8 @@ export default {
     return {
       islands: [],
       selectedRegion: "",
-      selectedIsland: false
+      selectedIsland: false,
+      questions: []
     }
   },
   mounted(){
@@ -49,8 +49,10 @@ export default {
     }),
 
 
-    this.fetchData()
-  },
+    this.fetchData(),
+
+    this.fetchQuestions()
+  }
 
   methods: {
     fetchData(){
@@ -58,6 +60,14 @@ export default {
       .then(islands => {
         this.islands = islands
         eventBus.$emit("islands-loaded")
+      });
+    },
+
+    fetchQuestions(){
+      QuizService.getQuestions()
+      .then(questions => {
+        this.questions = questions
+        eventBus.$emit("questions-loaded")
       });
     }
   },

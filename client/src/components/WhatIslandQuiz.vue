@@ -1,166 +1,91 @@
 <template lang="html">
 
-<section class="container">
+  <div id="quiz">
 
-  <div class="questionBox" id="app">
+    <div v-if="introduction">
+      <h1>Welcome to da quiz: {{title}}</h1>
+      <p>
+        Answer the following questions to find out wehat island suits you best!
+      </p>
 
-    <transition :duration="{ enter: 500, leave: 300 }" enter-active-class="animated zoomIn" leave-active-class="animated zoomOut" mode="out-in">
+      <button @click="startQuiz">START!</button>
+    </div>
 
-			<!--qusetionContainer-->
-			<div class="questionContainer" v-if="questionIndex<quiz.questions.length" v-bind:key="questionIndex">
+    <div v-if="questionsSection">
+      <question
+                :question="questions[currentQuestion]"
+                v-on:answer="handleAnswer"
+                :question-number="currentQuestion+1"
+      ></question>
+    </div>
 
-				<header>
-					<h1 class="title is-6">VueQuiz</h1>
-					<!--progress-->
-					<div class="progressContainer">
-						<progress class="progress is-info is-small" :value="(questionIndex/quiz.questions.length)*100" max="100">{{(questionIndex/quiz.questions.length)*100}}%</progress>
-						<p>{{(questionIndex/quiz.questions.length)*100}}% complete</p>
-					</div>
-					<!--/progress-->
-				</header>
-
-				<!-- questionTitle -->
-				<h2 class="titleContainer title">{{ quiz.questions[questionIndex].text }}</h2>
-
-				<!-- quizOptions -->
-				<div class="optionContainer">
-					<div class="option" v-for="(response, index) in quiz.questions[questionIndex].responses" @click="selectOption(index)" :class="{ 'is-selected': userResponses[questionIndex] == index}" :key="index">
-						{{ index | charIndex }}. {{ response.text }}
-					</div>
-				</div>
-
-				<!--quizFooter: navigation and progress-->
-				<footer class="questionFooter">
-
-					<!--pagination-->
-					<nav class="pagination" role="navigation" aria-label="pagination">
-
-						<!-- back button -->
-						<a class="button" v-on:click="prev();" :disabled="questionIndex < 1">
-                    Back
-                  </a>
-
-						<!-- next button -->
-						<a class="button" :class="(userResponses[questionIndex]==null)?'':'is-active'" v-on:click="next();" :disabled="questionIndex>=quiz.questions.length">
-                    {{ (userResponses[questionIndex]==null)?'Skip':'Next' }}
-                  </a>
-
-					</nav>
-					<!--/pagination-->
-
-				</footer>
-				<!--/quizFooter-->
-
-			</div>
-			<!--/questionContainer-->
-
-			<!--quizCompletedResult-->
-			<div v-if="questionIndex >= quiz.questions.length" v-bind:key="questionIndex" class="quizCompleted has-text-centered">
-
-				<!-- quizCompletedIcon: Achievement Icon -->
-				<span class="icon">
-                <i class="fa" :class="score()>3?'fa-check-circle-o is-active':'fa-times-circle'"></i>
-              </span>
-
-				<!--resultTitleBlock-->
-				<h2 class="title">
-					You did {{ (score()>7?'an amazing':(score()<4?'a poor':'a good')) }} job!
-				</h2>
-				<p class="subtitle">
-					Total score: {{ score() }} / {{ quiz.questions.length }}
-				</p>
-					<br>
-					<a class="button" @click="restart()">restart <i class="fa fa-refresh"></i></a>
-				<!--/resultTitleBlock-->
-
-			</div>
-			<!--/quizCompetedResult-->
-
-		</transition>
-
-	</div>
-	<!--/questionBox-->
-
-</section>
-
+    <div v-if="results">
+      You got {{correct}} right out of {{questions.length}} questions. Your percentage is {{perc}}%.
+    </div>
 
   </div>
-
-</section>
 
 </template>
 
 <script>
 import { eventBus } from "../main.js"
 
+const quizQuestions =
+
+
+
 export default {
+data(){
+  introduction: false,
+  questionsSection: false,
+  results: false,
+  title: '',
+  questions: [],
+  currentQuestion: 0,
+  answers: [],
+  score: 0
+  }
+},
+
+mounted(){
+
+  fetch(quizQuestions)
+  .then(res => res.json())
+  .then(res => {
+    this.title = res.title;
+    this.questions = res.questions;
+    this.introduction = true;
+  })
+
+},
+
+methods: {
+  startQuiz() {
+    this.introduction = false;
+    this.questions = true;
+  },
+
+  handleAnswer(event) {
+      this.answers[this.currentQuestion]=event.answer;
+      if((this.currentQuestion+1) === this.questions.length) {
+        this.handleResults();
+        this.questionStage = false;
+        this.resultsStage = true;
+      } else {
+        this.currentQuestion++;
+      }
+    },
+    handleResults() {
+      this.questions.forEach((a, index) => {
+        if(this.answers[index] === a.answer) this.correct++;
+      });
+    }
+  }
+})
 }
 
-const quiz = {
-  user: "Guest",
-  questions: [
-    {
-      text: "Is this quiz going to work?",
-      response: [
-        {text: "no"},
-        {text: "yes", correct: true}
-      ]
-    }
-  ]
-},
-guestResponse = Array(quiz.questions.length).fill(null);
-
-  data: {
-    quiz: quiz,
-    questionIndex: 0,
-    guestResponses: guestResponse,
-    isActive: false
-  },
-
-  filters: {
-    charIndex: function(index) {
-      return String.fromCharCode(97 + index);
-    }
-  },
-
-  methods: {
-
-    restart: function(){
-      this.questionIndex = 0;
-      this.guestResponses = Array(this.quiz.questions.length).fill(null);
-    },
-
-    selectOption: function(index){
-      Vue.set(this.guestResponses, this.questionIndex, index);
-    },
-
-    next: function(){
-      if (this.questionIndex < this.questions.length) this.questionIndex++;
-    },
-
-    prev: function(){
-      if(this.questions.lenghth > 0) this.questionIndex--;
-    },
-
-    // score: function(){
-    //   const score = 0;
-    //   for ( let index = 0; index < this.guestResponses.length; index++){
-    //     if (
-    //       typeOf this.questions[index].responses[this.guestResponses[index]] !== "undefined" && this.quiz.questions[index].responses[this.guestResponses[index]].correct
-    //     ){
-    //       score = score + 1
-    //     }
-    //   }
-    //   return score;
-    // }
-  }
-});
 
 </script>
 
 <style lang="css" scoped>
-
-
-
-
 </style>
