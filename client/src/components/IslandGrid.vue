@@ -1,15 +1,15 @@
 <template lang="html">
   <div id="islandGrid">
 
-		<div class="island">
+    <div class="island">
       <h3>{{selectedIsland.name}}</h3>
       <img :src="selectedIsland.image">
       <p>{{ selectedIsland.information }}</p>
-			<p>Area: {{ selectedIsland.area }} hectares</p>
-			<p>Population: {{ selectedIsland.population }}</p>
-		</div>
+      <p>Area: {{ selectedIsland.area }} hectares</p>
+      <p>Population: {{ selectedIsland.population }}</p>
+    </div>
 
-	</div>
+  </div>
 </template>
 
 <script>
@@ -17,18 +17,18 @@ import IslandService from '../services/IslandService'
 import { eventBus } from '../main.js'
 export default {
 
-name: "island-grid",
-data(){
-  return{
+  name: "island-grid",
+  data(){
+    return{
 
+    }
+  },
+  props: ["selectedIsland"],
+  filters: {
+    format(value){
+      return new Date(value).toLocaleString().substring(0, 10);
+    }
   }
-},
-props: ["selectedIsland"],
-filters: {
-  format(value){
-    return new Date(value).toLocaleString().substring(0, 10);
-  }
-}
 
 }
 </script>
@@ -36,10 +36,25 @@ filters: {
 
 <style lang="css" scoped>
 
-  .island{
-   color: black;
-   border: 10px double #1C6EA4;
-   border-radius: 40px 0px 40px 0px;
-  }
+.island{
+  width: 30rem;
+  height: 35rem;
+  background-color: DeepSkyBlue;
+  color: White;
+  margin: 0.5rem 0.5rem;
+  padding: 1rem 2rem;
+  border: 0px none;
+  border-radius: 3%;
+}
+
+h3 {
+  font-size: 2.5em;
+  line-height: 0.5em;
+  margin-top: 0.5em;
+}
+
+img {
+  height: 20rem;
+}
 
 </style>

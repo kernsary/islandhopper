@@ -101,4 +101,8 @@ export default {
   flex-direction: row;
 }
 
+island-map {
+  width: 420px;
+}
+
 </style>
