@@ -9,7 +9,7 @@
 
       <island-map :islands="islands"></island-map>
       <island-grid :selectedIsland="selectedIsland" v-if="selectedIsland"></island-grid>
-      <!-- <what-island-quiz></what-island-quiz> -->
+      <quiz></quiz>
 
     </div>
 
@@ -18,13 +18,13 @@
 </template>
 
 <script>
-// import WhatIslandQuiz from './components/WhatIslandQuiz.vue';
 import MapComponent from "./components/MapComponent.vue";
 import IslandGrid from "./components/IslandGrid.vue";
 import IslandRegionsList from "./components/IslandRegionsList.vue";
 import IslandDetails from "./components/IslandDetails.vue";
+import WhatIslandQuiz from "./components/WhatIslandQuiz.vue";
 import IslandService from './services/IslandService.js';
-import QuizService from './services/QuizService.js';
+import QuizServices from './services/QuizServices.js';
 import { eventBus } from "./main.js";
 
 export default {
@@ -52,7 +52,8 @@ export default {
     this.fetchData(),
 
     this.fetchQuestions()
-  }
+    console.log(fetchQuestions);
+  },
 
   methods: {
     fetchData(){
@@ -64,7 +65,7 @@ export default {
     },
 
     fetchQuestions(){
-      QuizService.getQuestions()
+      QuizServices.getQuestions()
       .then(questions => {
         this.questions = questions
         eventBus.$emit("questions-loaded")
@@ -77,7 +78,7 @@ export default {
     'island-details': IslandDetails,
     'island-map': MapComponent,
     'island-grid': IslandGrid,
-    // 'what-island-quiz': WhatIslandQuiz
+    'quiz': WhatIslandQuiz
   }
 
 }

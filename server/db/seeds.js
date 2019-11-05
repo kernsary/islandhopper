@@ -2,7 +2,6 @@ use islands_info;
 db.dropDatabase();
 
 db.islands.insertMany([
-
   {
     "name": "Lewis and Harris",
     "region": "Outer Hebrides",
@@ -13,7 +12,6 @@ db.islands.insertMany([
     "lat": 58.1,
     "long": -6.6672
   },
-
   {
     "name": "Skye",
     "region": "Skye group",
@@ -24,7 +22,6 @@ db.islands.insertMany([
     "lat": 57.2736,
     "long": -6.2155
   },
-
     {
       "name": "Shetland Mainland",
       "region": "Shetland",
@@ -35,7 +32,6 @@ db.islands.insertMany([
       "lat": 60.3207,
       "long": -1.2886
     },
-
     {
       "name": "Mull",
       "region": "Mull group",
@@ -45,9 +41,7 @@ db.islands.insertMany([
       "image":`https://s0.geograph.org.uk/geophotos/01/52/85/1528569_9e361a22.jpg`,
       "lat": 56.4392,
       "long": -6.0009
-    },
-
-    {
+    },    {
       "name": "Islay",
       "region": "Islay group",
       "area": 61956,
@@ -56,9 +50,7 @@ db.islands.insertMany([
       "image":`https://s0.geograph.org.uk/photos/75/52/755237_e3e7ebb9.jpg`,
       "lat": 55.7363,
       "long": -6.1771
-    },
-
-    {
+    },    {
       "name": "Orkney Mainland",
       "region": "Orkney",
       "area": 52325,
@@ -67,9 +59,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/04/53/61/4536164_eb4dcf85.jpg`,
       "lat": 58.9971,
       "long": -3.1485
-    },
-
-    {
+    },    {
       "name": "Arran",
       "region": "Firth of Clyde",
       "area": 43201,
@@ -78,9 +68,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/02/35/88/2358811_c517f9bf.jpg`,
       "lat": 55.5806,
       "long": -5.2109
-    },
-
-    {
+    },    {
       "name": "Jura",
       "region": "Islay Group",
       "area": 36692,
@@ -89,9 +77,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/03/60/83/3608301_723aa4d9.jpg`,
       "lat": 55.9042,
       "long": -5.9414
-    },
-
-    {
+    },    {
       "name": "South Uist",
       "region": "Outer Hebrides",
       "area": 32026,
@@ -100,9 +86,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/05/20/23/5202377_aebdf994.jpg`,
       "lat": 57.2642,
       "long": -7.3312
-    },
-
-    {
+    },    {
       "name": "North Uist",
       "region": "Outer Hebrides",
       "area": 30305,
@@ -111,9 +95,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/photos/92/73/927347_2263cf99.jpg`,
       "lat": 57.5704,
       "long": -7.2812
-    },
-
-    {
+    },    {
       "name": "Yell",
       "region": "Shetland",
       "area": 21211,
@@ -122,9 +104,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/03/65/15/3651598_5d81a7e5.jpg`,
       "lat": 60.5543,
       "long": -1.0991
-    },
-
-    {
+    },    {
       "name": "Hoy",
       "region": "Orkney",
       "area": 13458,
@@ -133,9 +113,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/photos/00/88/008878_692e50ec.jpg`,
       "lat": 58.8550,
       "long": -3.3256
-    },
-
-    {
+    },    {
       "name": "Bute",
       "region": "Firth of Clyde",
       "area": 12217,
@@ -144,9 +122,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/02/55/95/2559534_80bf0366.jpg`,
       "lat": 55.8274,
       "long": -5.0936
-    },
-
-    {
+    },    {
       "name": "Unst",
       "region": "Shetland",
       "area": 12068,
@@ -155,9 +131,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/02/69/57/2695731_7bdec1ab.jpg`,
       "lat": 60.7416,
       "long": -0.9049
-    },
-
-    {
+    },    {
       "name": "Rum",
       "region": "Skye group",
       "area": 10463,
@@ -166,9 +140,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/02/99/42/2994261_040dca6d.jpg`,
       "lat": 57.0095,
       "long": -6.3239
-    },
-
-    {
+    },    {
       "name": "Benbecula",
       "region": "Outer Hebrides",
       "area": 8203,
@@ -177,9 +149,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/photos/01/04/010449_7f9474a0.jpg`,
       "lat": 57.4565,
       "long": -7.2820
-    },
-
-    {
+    },    {
       "name": "Tiree",
       "region": "Mull group",
       "area": 7834,
@@ -188,9 +158,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/photos/08/92/089210_1dde99e8.jpg`,
       "lat": 56.4932,
       "long": -6.9070
-    },
-
-    {
+    },    {
       "name": "Coll",
       "region": "Mull group",
       "area": 7685,
@@ -199,9 +167,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/photos/80/85/808546_d1258498.jpg`,
       "lat": 56.6246,
       "long": -6.5619
-    },
-
-    {
+    },    {
       "name": "Raasay",
       "region": "Skye group",
       "area": 6405,
@@ -210,9 +176,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/photos/62/87/628700_0cccdc52.jpg`,
       "lat": 57.3970,
       "long": -6.0481
-    },
-
-    {
+    },    {
       "name": "Barra",
       "region": "Outer Hebrides",
       "area": 5875,
@@ -221,9 +185,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/02/87/54/2875475_bc2ce472.jpg`,
       "lat": 56.9809,
       "long": -7.4568
-    },
-
-    {
+    },    {
       "name": "Sanday",
       "region": "Orkney",
       "area": 5043,
@@ -232,9 +194,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/02/25/35/2253584_0513059d.jpg`,
       "lat": 59.2458,
       "long": -2.5492
-    },
-
-    {
+    },    {
       "name": "South Ronaldsay",
       "region": "Orkney",
       "area": 4980,
@@ -243,9 +203,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/06/20/24/6202489_e59f1958.jpg`,
       "lat": 58.8068,
       "long": -2.9473
-    },
-
-    {
+    },    {
       "name": "Rousay",
       "region": "Orkney",
       "area": 4860,
@@ -254,9 +212,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/04/71/71/4717198_ec884b28.jpg`,
       "lat": 59.1495,
       "long": -3.0202
-    },
-
-    {
+    },    {
       "name": "Westray",
       "region": "Orkney",
       "area": 4713,
@@ -265,9 +221,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/04/52/75/4527555_b2bc2fd7.jpg`,
       "lat": 59.2942,
       "long": -2.9801
-    },
-
-    {
+    },    {
       "name": "Fetlar",
       "region": "Shetland",
       "area": 4078,
@@ -276,9 +230,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/01/02/82/1028248_a2833710.jpg`,
       "lat": 60.6167,
       "long": -0.8667
-    },
-
-    {
+    },    {
       "name": "Colonsay",
       "region": "Islay group",
       "area": 4074,
@@ -287,9 +239,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/05/43/95/5439522_570d3557.jpg`,
       "lat": 56.0810,
       "long": -6.2118
-    },
-
-    {
+    },    {
       "name": "Stronsay",
       "region": "Orkney",
       "area": 3275,
@@ -298,9 +248,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/04/71/14/4711418_b7d0c511.jpg`,
       "lat": 59.1069,
       "long": -2.6001
-    },
-
-    {
+    },    {
       "name": "Eigg",
       "region": "Skye group",
       "area": 3049,
@@ -309,9 +257,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/05/61/27/5612744_dd1c2299.jpg`,
       "lat": 56.8937,
       "long": -6.1533
-    },
-
-    {
+    },    {
       "name": "Shapinsay",
       "region": "Orkney",
       "area": 2948,
@@ -320,9 +266,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/01/32/08/1320860_882b5e37.jpg`,
       "lat": 59.0441,
       "long": -2.8531
-    },
-
-    {
+    },    {
       "name": "Bressay",
       "region": "Shetland",
       "area": 2805,
@@ -331,9 +275,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/02/71/25/2712571_f4a183f3.jpg`,
       "lat": 60.1518,
       "long": -1.0880
-    },
-
-    {
+    },    {
       "name": "Lismore",
       "region": "Mull group",
       "area": 2351,
@@ -342,9 +284,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/01/95/46/1954674_3ad9297c.jpg`,
       "lat": 56.5006,
       "long": -5.5263
-    },
-
-    {
+    },    {
       "name": "Ulva",
       "region": "Mull group",
       "area": 1990,
@@ -353,9 +293,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/03/99/30/3993089_54d077eb.jpg`,
       "lat": 56.4797,
       "long": -6.2049
-    },
-
-    {
+    },    {
       "name": "Whalsay",
       "region": "Shetland",
       "area": 1970,
@@ -364,9 +302,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/photos/09/99/099991_d7532886.jpg`,
       "lat": 60.3523,
       "long": -0.9820
-    },
-
-    {
+    },    {
       "name": "Muckle Roe",
       "region": "Shetland",
       "area": 1773,
@@ -375,9 +311,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/photos/00/63/006333_e8dea265.jpg`,
       "lat": 60.3667,
       "long": -1.4250
-    },
-
-    {
+    },    {
       "name": "Luing",
       "region": "Islay group",
       "area": 1430,
@@ -386,9 +320,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/02/54/79/2547934_0576c9c3.jpg`,
       "lat": 56.2373,
       "long": -5.6398
-    },
-
-    {
+    },    {
       "name": "Gigha",
       "region": "Islay group",
       "area": 1395,
@@ -397,9 +329,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/05/83/60/5836003_f4e6600a.jpg`,
       "lat": 55.6845,
       "long": -5.7491
-    },
-
-    {
+    },    {
       "name": "Seil",
       "region": "Islay group",
       "area": 1329,
@@ -408,9 +338,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/photos/00/56/005681_5865841d.jpg`,
       "lat": 56.4470,
       "long": -5.7740
-    },
-
-    {
+    },    {
       "name": "Kerrera",
       "region": "Islay group",
       "area": 1214,
@@ -419,9 +347,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/01/94/33/1943398_e42cc967.jpg`,
       "lat": 56.4154,
       "long": -5.4718
-    },
-
-    {
+    },    {
       "name": "Great Cumbrae",
       "region": "Firth of Clyde",
       "area": 1168,
@@ -430,9 +356,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/04/54/00/4540040_02506fc0.jpg`,
       "lat": 55.7650,
       "long": -4.9256
-    },
-
-    {
+    },    {
       "name": "Canna",
       "region": "Skye group",
       "area": 1130,
@@ -441,9 +365,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/photos/30/40/304063_970586fc.jpg`,
       "lat": 57.0630,
       "long": -6.5487
-    },
-
-    {
+    },    {
       "name": "Vatersay",
       "region": "Outer Hebrides",
       "area": 960,
@@ -452,9 +374,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/06/12/19/6121985_72f9012c.jpg`,
       "lat": 56.9336,
       "long": -7.5363
-    },
-
-    {
+    },    {
       "name": "Iona",
       "region": "Mull group",
       "area": 877,
@@ -463,9 +383,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/05/37/05/5370541_29331718.jpg`,
       "lat": 56.3347,
       "long": -6.4041
-    },
-
-    {
+    },    {
       "name": "Fair Isle",
       "region": "Shetland",
       "area": 768,
@@ -474,9 +392,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/photos/87/10/871058_7f6115f0.jpg`,
       "lat": 59.5339,
       "long": -1.6333
-    },
-
-    {
+    },    {
       "name": "Eriskay",
       "region": "Outer Hebrides",
       "area": 703,
@@ -485,9 +401,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/02/56/21/2562105_7a8d0a68.jpg`,
       "lat": 57.0727,
       "long": -7.2924
-    },
-
-    {
+    },    {
       "name": "Scalpay",
       "region": "Outer Hebrides",
       "area": 653,
@@ -496,9 +410,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/photos/56/45/564519_14fd32d0.jpg`,
       "lat": 57.8667,
       "long": -6.6667
-    },
-
-    {
+    },    {
       "name": "Muck",
       "region": "Skye group",
       "area": 559,
@@ -507,9 +419,7 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/02/97/09/2970923_c8b33df8.jpg`,
       "lat": 56.8358,
       "long": -6.2384
-    },
-
-    {
+    },    {
       "name": "Oronsay",
       "region": "Islay group",
       "area": 543,
@@ -519,9 +429,66 @@ db.islands.insertMany([
       "lat": 56.0208,
       "long": -6.2399
     },
+  ]);
 
+  db.questions.insertOne(
     {
-
+      'title': "What Island ",
+      "questions": [
+        {
+          "text": "Pick an ideal weekend!",
+          "options": [
+            "Relax at home",
+            "Meeting up with friends/family",
+            "Two days of ACTION PACKED adventure",
+            "A busy day exploring the culture and heritage of the general vecinity"
+          ]
+        },
+        {
+          "text": "Pick an activity",
+          "options": [
+            "Whisky Tasting",
+            "Hiking",
+            "Beach",
+            "Visiting a Castle"
+          ]
+        },
+        {
+          "text": "Pick a mode of Transport",
+          "options": [
+            "Car",
+            "Plane",
+            "Bike",
+            "Boat"
+          ]
+        },
+        {
+          "text": "Pick a food",
+          "options": [
+            "Cheese",
+            "Lobster",
+            "Haggis",
+            "Fish"
+          ]
+        },
+        {
+          "text": "Pick a sport",
+          "options": [
+            "Stone Skimming",
+            "Surfing",
+            "Kayaking",
+            "Cycling"
+          ]
+        },
+        {
+          "text": "Pick an animal",
+          "options": [
+            "Otter",
+            "Seal (Kiss from a rose)",
+            "Eagle",
+            "Puffin"
+          ]
+        }
+      ]
     }
-
-]);
+);
