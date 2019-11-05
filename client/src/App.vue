@@ -68,9 +68,9 @@ export default {
     },
 
     // addAreas(){
-    //   this.islands.forEach(island){
+    //   this.islands.forEach(island) => {
     //     this.areas.push([island.name, island.area])
-    //   }
+    //   };
     // },
 
     homeClick(){

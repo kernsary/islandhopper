@@ -1,4 +1,4 @@
-<!-- <template lang="html">
+<template lang="html">
   <GChart
   type="BarChart"
   :data="areaData"
@@ -29,4 +29,4 @@ export default {
 </script>
 
 <style lang="css" scoped>
-</style> -->
+</style>
