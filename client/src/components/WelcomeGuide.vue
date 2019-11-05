@@ -1,11 +1,9 @@
 <template lang="html">
 
-    <div class="island">
-      <h3>{{selectedIsland.name}}</h3>
-      <img :src="selectedIsland.image">
-      <p>{{ selectedIsland.information }}</p>
-      <p>Area: {{ selectedIsland.area }} hectares</p>
-      <p>Population: {{ selectedIsland.population }}</p>
+    <div class="welcome">
+      <h3>Welcome to Islandhopper</h3>
+      <img :src="`https://s0.geograph.org.uk/geophotos/04/00/94/4009416_2eaddfcb_original.jpg`">
+      <p>Click on an island on the map to explore!<br><br>Or take our quiz - Which island are you?</p>
     </div>
 
 </template>
@@ -15,7 +13,7 @@ import IslandService from '../services/IslandService'
 import { eventBus } from '../main.js'
 export default {
 
-  name: "island-details",
+  name: "welcome-guide",
 
   props: ["selectedIsland"]
 
@@ -25,7 +23,7 @@ export default {
 
 <style lang="css" scoped>
 
-.island{
+.welcome{
   width: 40rem;
   height: 35rem;
   background-color: DeepSkyBlue;

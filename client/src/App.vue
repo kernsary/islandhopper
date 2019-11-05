@@ -8,6 +8,7 @@
     <div class="main-container">
 
       <island-map :islands="islands"></island-map>
+      <welcome-guide :selectedIsland="selectedIsland" v-if="!selectedIsland"></welcome-guide>
       <island-details :selectedIsland="selectedIsland" v-if="selectedIsland"></island-details>
       <!-- <what-island-quiz></what-island-quiz> -->
     </div>
@@ -17,6 +18,7 @@
 <script>
 // import WhatIslandQuiz from './components/WhatIslandQuiz.vue';
 import MapComponent from "./components/MapComponent.vue";
+import WelcomeGuide from "./components/WelcomeGuide.vue";
 import IslandDetails from "./components/IslandDetails.vue";
 import IslandRegionsList from "./components/IslandRegionsList.vue";
 import IslandService from './services/IslandService.js';
@@ -58,6 +60,7 @@ export default {
 
   components: {
     'islands-in-region-list': IslandRegionsList,
+    'welcome-guide': WelcomeGuide,
     'island-map': MapComponent,
     'island-details': IslandDetails,
     // 'what-island-quiz': WhatIslandQuiz
