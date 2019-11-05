@@ -76,7 +76,8 @@ methods: {
     .then(islands => {
       this.islands = islands
       eventBus.$emit("islands-loaded")
-      this.addAreas();
+      this.addAreas()
+      this.addPopulations()
     });
   },
 
@@ -84,6 +85,13 @@ methods: {
     this.islands.forEach((island) => {
       // console.log(island.name);
       this.areas.push([island.name, island.area])
+    });
+  },
+
+  addPopulations(){
+    this.islands.forEach((island) => {
+      // console.log(island.name);
+      this.populations.push([island.name, island.population])
     });
   },
 
