@@ -406,8 +406,8 @@ db.islands.insertMany([
       "population": 551,
       "information": "Seil is a picturesque former slate-mining island that is linked to the mainland by and old hump-backed bridge known as 'The Bridge Over the Atlantic'.",
       "image": `https://s0.geograph.org.uk/photos/00/56/005681_5865841d.jpg`,
-      "lat": 56.4470,
-      "long": -5.7740
+      "lat": 56.30,
+      "long": -5.62
     },
 
     {
@@ -417,8 +417,8 @@ db.islands.insertMany([
       "population": 34,
       "information": "Kerrera lies close to the mainland and provides shelter for Oban harbour. It has lots of lumpy hills and a herd of wild goats live there.",
       "image": `https://s0.geograph.org.uk/geophotos/01/94/33/1943398_e42cc967.jpg`,
-      "lat": 56.4154,
-      "long": -5.4718
+      "lat": 56.4,
+      "long": -5.53
     },
 
     {

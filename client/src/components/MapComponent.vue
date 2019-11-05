@@ -104,8 +104,9 @@ export default {
 <style lang="css" scoped>
 
 #mapid {
-  height: 500px;
+  height: 37rem;
   width: 420px;
+  margin: 1rem;
 }
 
 </style>

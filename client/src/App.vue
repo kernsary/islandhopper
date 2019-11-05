@@ -80,6 +80,7 @@ export default {
 .nav-wrapper {
   display: flex;
   flex-direction: row;
+  margin-left: 0.63rem;
 }
 
 .nav-item {

@@ -41,7 +41,7 @@ export default {
   height: 35rem;
   background-color: DeepSkyBlue;
   color: White;
-  margin: 0.5rem 0.5rem;
+  margin: 1rem 0.5rem;
   padding: 1rem 2rem;
   border: 0px none;
   border-radius: 3%;
