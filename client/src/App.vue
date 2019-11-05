@@ -93,6 +93,14 @@ methods: {
       // console.log(island.name);
       this.populations.push([island.name, island.population])
     });
+    // const tempArray = [];
+    // this.islands.forEach((island) => {
+    //   tempArray.push([island.name, island.population])
+    // });
+    // // console.log(tempArray);
+    // tempArray.sort((a, b) => parseFloat(a.population) - parseFloat(b.population));
+    // console.log(tempArray);
+    // this.populations.concat(tempArray);
   },
 
   homeClick(){
