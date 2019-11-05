@@ -2,15 +2,18 @@
 
   <div class="body-wrapper">
     <div class="nav-wrapper">
-      <h1 class="nav-item" id="homelink">Islandhopper</h1>
-      <h1 class="nav-item">Which island are you?</h1>
+      <button class="nav-item" id="homelink" @click="homeClick">Islandhopper</button>
+      <button class="nav-item" id="quizlink" @click="quizClick">Which island are you?</button>
     </div>
     <div class="main-container">
-
-      <island-map :islands="islands"></island-map>
-      <welcome-guide :selectedIsland="selectedIsland" v-if="!selectedIsland"></welcome-guide>
-      <island-details :selectedIsland="selectedIsland" v-if="selectedIsland"></island-details>
-      <!-- <what-island-quiz></what-island-quiz> -->
+      <div class="home" :selectedView="selectedView" v-if="selectedView === 'home'">
+        <island-map :islands="islands"></island-map>
+        <welcome-guide :selectedIsland="selectedIsland" v-if="!selectedIsland"></welcome-guide>
+        <island-details :selectedIsland="selectedIsland" v-if="selectedIsland"></island-details>
+      </div>
+      <div class="quiz" :selectedView="selectedView" v-if="selectedView === 'quiz'">
+          <!-- <what-island-quiz></what-island-quiz> -->
+      </div>
     </div>
   </div>
 </template>
@@ -30,7 +33,8 @@ export default {
     return {
       islands: [],
       selectedRegion: "",
-      selectedIsland: false
+      selectedIsland: false,
+      selectedView: "home"
     }
   },
   mounted(){
@@ -55,6 +59,14 @@ export default {
         this.islands = islands
         eventBus.$emit("islands-loaded")
       });
+    },
+
+    homeClick(){
+      this.selectedView = "home";
+    },
+
+    quizClick(){
+      this.selectedView = "quiz";
     }
   },
 
@@ -85,7 +97,10 @@ export default {
 }
 
 .nav-item {
-  /* width: 18rem; */
+  /* width: 18rem;
+  height: 4rem; */
+  font-size: 2rem;
+  font-weight: bold;
   background-color: DeepSkyBlue;
   color: White;
   margin: 0.5rem 0.5rem;
@@ -99,6 +114,11 @@ export default {
 }
 
 .main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.home {
   display: flex;
   flex-direction: row;
 }
