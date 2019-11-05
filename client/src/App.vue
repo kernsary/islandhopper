@@ -4,6 +4,7 @@
     <div class="nav-wrapper">
       <button class="nav-item" id="homelink" @click="homeClick">Islandhopper</button>
       <button class="nav-item" id="quizlink" @click="quizClick">Which island are you?</button>
+      <button class="nav-item" id="areachartlink" @click="areaChartClick">Island sizes</button>
     </div>
     <div class="main-container">
       <div class="home" :selectedView="selectedView" v-if="selectedView === 'home'">
@@ -13,6 +14,9 @@
       </div>
       <div class="quiz" :selectedView="selectedView" v-if="selectedView === 'quiz'">
         <!-- <what-island-quiz></what-island-quiz> -->
+      </div>
+      <div class="area-chart" v-if="selectedView === 'area-chart'">
+        <area-chart :areas="areas"></area-chart>
       </div>
     </div>
   </div>
@@ -70,7 +74,7 @@ export default {
 
     addAreas(){
       this.islands.forEach((island) => {
-        console.log(island.name);
+        // console.log(island.name);
         this.areas.push([island.name, island.area])
       });
     },
@@ -81,6 +85,10 @@ export default {
 
     quizClick(){
       this.selectedView = "quiz";
+    },
+
+    areaChartClick(){
+      this.selectedView = "area-chart";
     }
   },
 
