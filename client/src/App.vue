@@ -2,21 +2,16 @@
 
   <div class="body-wrapper">
     <div class="nav-wrapper">
-      <h1>Islandhopper</h1>
-      <h1>Which island are you?</h1>
+      <h1 class="nav-item" id="homelink">Islandhopper</h1>
+      <h1 class="nav-item">Which island are you?</h1>
     </div>
     <div class="main-container">
 
       <island-map :islands="islands"></island-map>
       <island-grid :selectedIsland="selectedIsland" v-if="selectedIsland"></island-grid>
       <!-- <what-island-quiz></what-island-quiz> -->
-      <!-- <islands-in-region-list :regions="selectedRegion"> </islands-in-region-list>
-      <island-details :island="selectedIsland"> </island-details> -->
-
     </div>
-
   </div>
-
 </template>
 
 <script>
@@ -79,11 +74,26 @@ export default {
 .body-wrapper {
   display: flex;
   flex-direction: column;
+  font-family: Helvetica, sans-serif;
 }
 
 .nav-wrapper {
   display: flex;
   flex-direction: row;
+}
+
+.nav-item {
+  /* width: 18rem; */
+  background-color: DeepSkyBlue;
+  color: White;
+  margin: 0.5rem 0.5rem;
+  padding: 0.5rem 0.5rem;
+  border: 0px none;
+  border-radius: 3%;
+}
+
+#homelink {
+  background-color: Blue;
 }
 
 .main-container {

@@ -2,11 +2,11 @@
   <div id="islandGrid">
 
 		<div class="island">
-			<h1>Region: {{ selectedIsland.region }}</h1>
-      <h3>Name: {{selectedIsland.name}}</h3>
-			<p>Area: {{ selectedIsland.area }}</p>
+      <h3>{{selectedIsland.name}}</h3>
+      <img :src="selectedIsland.image">
+      <p>{{ selectedIsland.information }}</p>
+			<p>Area: {{ selectedIsland.area }} hectares</p>
 			<p>Population: {{ selectedIsland.population }}</p>
-			<p>Facts: {{ selectedIsland.information }}</p>
 		</div>
 
 	</div>
