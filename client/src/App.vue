@@ -56,7 +56,7 @@ export default {
     this.fetchData()
 
     // this.addAreas()
-  // },
+  },
 
   methods: {
     fetchData(){
@@ -64,7 +64,7 @@ export default {
       .then(islands => {
         this.islands = islands
         eventBus.$emit("islands-loaded")
-        // this.addAreas();
+        this.addAreas();
       });
     },
 
