@@ -1,7 +1,7 @@
 <template lang="html">
   <GChart
   type="BarChart"
-  :data="areaData"
+  :data="populationData"
   />
 </template>
 
@@ -9,10 +9,10 @@
 import { GChart } from 'vue-google-charts'
 
 export default {
-  name: "area-chart",
+  name: "population-chart",
   data() {
     return {
-      areaData: this.areas
+      populationData: this.populations
       // chartOptions: {
       //   chart: {
       //     // title: 'Company Performance',
@@ -22,7 +22,7 @@ export default {
       // }
     }
   },
-  props: ["areas"],
+  props: ["populations"],
   components: {
     GChart
   }

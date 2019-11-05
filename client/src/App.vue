@@ -5,6 +5,7 @@
       <button class="nav-item" id="homelink" @click="homeClick">Islandhopper</button>
       <button class="nav-item" id="quizlink" @click="quizClick">Which island are you?</button>
       <button class="nav-item" id="areachartlink" @click="areaChartClick">Island sizes</button>
+      <button class="nav-item" id="populationchartlink" @click="populationChartClick">Island populations</button>
     </div>
     <div class="main-container">
       <div class="home" :selectedView="selectedView" v-if="selectedView === 'home'">
@@ -15,8 +16,11 @@
       <div class="quiz" :selectedView="selectedView" v-if="selectedView === 'quiz'">
         <!-- <what-island-quiz></what-island-quiz> -->
       </div>
-      <div class="area-chart" v-if="selectedView === 'area-chart'">
+      <div class="chart" :selectedView="selectedView" v-if="selectedView === 'a-chart'">
         <area-chart :areas="areas"></area-chart>
+      </div>
+      <div class="chart" :selectedView="selectedView" v-if="selectedView === 'p-chart'">
+        <population-chart :populations="populations"></population-chart>
       </div>
     </div>
   </div>
@@ -28,6 +32,7 @@ import MapComponent from "./components/MapComponent.vue";
 import WelcomeGuide from "./components/WelcomeGuide.vue";
 import IslandDetails from "./components/IslandDetails.vue";
 import AreaChart from "./components/AreaChart.vue";
+import PopulationChart from "./components/PopulationChart.vue";
 import IslandRegionsList from "./components/IslandRegionsList.vue";
 import IslandService from './services/IslandService.js';
 import { eventBus } from "./main.js";
@@ -41,65 +46,73 @@ export default {
       selectedIsland: false,
       selectedView: "home",
       areas: [
-        ["Island", "Area (hectares)"]
+        ["Island", "Area"]
+      ],
+      populations: [
+        ["Island", "Population"]
       ]
-    }
-  },
-  mounted(){
-    eventBus.$on("region-selected", (region) => {
-      this.selectedRegion = region;
-      console.log("selectedRegion", this.selectedRegion);
-    }),
-
-    eventBus.$on("island-selected", (island) => {
-      this.selectedIsland = island;
-      console.log("selectedIsland", this.selectedIsland);
-    }),
-
-
-    this.fetchData()
-
-    // this.addAreas()
-  },
-
-  methods: {
-    fetchData(){
-      IslandService.getIslands()
-      .then(islands => {
-        this.islands = islands
-        eventBus.$emit("islands-loaded")
-        this.addAreas();
-      });
-    },
-
-    addAreas(){
-      this.islands.forEach((island) => {
-        // console.log(island.name);
-        this.areas.push([island.name, island.area])
-      });
-    },
-
-    homeClick(){
-      this.selectedView = "home";
-    },
-
-    quizClick(){
-      this.selectedView = "quiz";
-    },
-
-    areaChartClick(){
-      this.selectedView = "area-chart";
-    }
-  },
-
-  components: {
-    'islands-in-region-list': IslandRegionsList,
-    'welcome-guide': WelcomeGuide,
-    'island-map': MapComponent,
-    'island-details': IslandDetails,
-    'area-chart': AreaChart
-    // 'what-island-quiz': WhatIslandQuiz
   }
+},
+mounted(){
+  eventBus.$on("region-selected", (region) => {
+    this.selectedRegion = region;
+    console.log("selectedRegion", this.selectedRegion);
+  }),
+
+  eventBus.$on("island-selected", (island) => {
+    this.selectedIsland = island;
+    console.log("selectedIsland", this.selectedIsland);
+  }),
+
+
+  this.fetchData()
+
+  // this.addAreas()
+},
+
+methods: {
+  fetchData(){
+    IslandService.getIslands()
+    .then(islands => {
+      this.islands = islands
+      eventBus.$emit("islands-loaded")
+      this.addAreas();
+    });
+  },
+
+  addAreas(){
+    this.islands.forEach((island) => {
+      // console.log(island.name);
+      this.areas.push([island.name, island.area])
+    });
+  },
+
+  homeClick(){
+    this.selectedView = "home";
+  },
+
+  quizClick(){
+    this.selectedView = "quiz";
+  },
+
+  areaChartClick(){
+    this.selectedView = "a-chart";
+  },
+
+  populationChartClick(){
+    this.selectedView = "p-chart";
+  }
+},
+
+components: {
+  'islands-in-region-list': IslandRegionsList,
+  'welcome-guide': WelcomeGuide,
+  'island-map': MapComponent,
+  'island-details': IslandDetails,
+  'area-chart': AreaChart,
+  'population-chart': PopulationChart
+  // 'what-island-quiz': WhatIslandQuiz
+}
 
 }
 
@@ -148,6 +161,11 @@ export default {
 
 island-map {
   width: 420px;
+}
+
+.chart {
+  width: 1500px;
+  height: 300px;
 }
 
 </style>
