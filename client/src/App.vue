@@ -53,10 +53,10 @@ export default {
     }),
 
 
-    this.fetchData(),
+    this.fetchData()
 
-    this.addAreas()
-  },
+    // this.addAreas()
+  // },
 
   methods: {
     fetchData(){
@@ -64,14 +64,16 @@ export default {
       .then(islands => {
         this.islands = islands
         eventBus.$emit("islands-loaded")
+        // this.addAreas();
       });
     },
 
-    // addAreas(){
-    //   this.islands.forEach(island) => {
-    //     this.areas.push([island.name, island.area])
-    //   };
-    // },
+    addAreas(){
+      this.islands.forEach((island) => {
+        console.log(island.name);
+        this.areas.push([island.name, island.area])
+      });
+    },
 
     homeClick(){
       this.selectedView = "home";
