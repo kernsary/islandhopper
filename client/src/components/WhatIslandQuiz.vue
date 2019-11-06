@@ -93,7 +93,7 @@ export default {
           points: 0
         },
         {
-          name: "Sandray",
+          name: "Sanday",
           points: 0
         },
         {

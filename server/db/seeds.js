@@ -446,7 +446,7 @@ db.islands.insertMany([
           },
           {
             "text": "Meeting up with friends/family",
-            "value": ["Skye", "Islay", "Sandray"]
+            "value": ["Skye", "Islay", "Sanday"]
           },
           {
             "text": "Two days of ACTION PACKED adventure",
@@ -470,7 +470,7 @@ db.islands.insertMany([
           },
           {
             "text": "Beach",
-            "value": ["Sandray", "Seil", "Tiree"]
+            "value": ["Sanday", "Seil", "Tiree"]
           },
           {
             "text": "Visiting a Castle",
@@ -494,7 +494,7 @@ db.islands.insertMany([
             },
             {
             "text": "Boat",
-            "value": ["Seil", "Tiree", "Sandray", "Bute"]
+            "value": ["Seil", "Tiree", "Sanday", "Bute"]
             }
           ]
         },
@@ -514,7 +514,7 @@ db.islands.insertMany([
           },
           {
             "text": "Fish",
-            "value": ["Yell", "Seil", "Tiree", "Sandray", "Bute"]
+            "value": ["Yell", "Seil", "Tiree", "Sanday", "Bute"]
           }
           ]
         },
@@ -526,7 +526,7 @@ db.islands.insertMany([
           },
           {
             "text": "Surfing",
-            "value": ["Tiree", "Sandray"]
+            "value": ["Tiree", "Sanday"]
           },
           {
             "text": "Kayaking",
@@ -550,7 +550,7 @@ db.islands.insertMany([
           },
           {
             "text": "Eagle",
-            "value": ["Islay", "Bute", "Sandray"]
+            "value": ["Islay", "Bute", "Sanday"]
           },
           {
             "text": "Puffin",
