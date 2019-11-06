@@ -1,7 +1,8 @@
 <template lang="html">
   <GChart
-  type="BarChart"
-  :data="areaData"
+  :type="BarChart"
+  :data="areaData",
+  :options="chartOptions"
   />
 </template>
 
@@ -12,14 +13,11 @@ export default {
   name: "area-chart",
   data() {
     return {
-      areaData: this.areas
-      // chartOptions: {
-      //   chart: {
-      //     // title: 'Company Performance',
-      //     // subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-      //     height: 2000
-      //   }
-      // }
+      areaData: this.areas,
+      chartOptions: {
+          height: 2000,
+          width: 1500,
+        }
     }
   },
   props: ["areas"],

@@ -51,84 +51,84 @@ export default {
       populations: [
         ["Island", "Population"]
       ]
+    }
+  },
+  mounted(){
+    eventBus.$on("region-selected", (region) => {
+      this.selectedRegion = region;
+      console.log("selectedRegion", this.selectedRegion);
+    }),
+
+    eventBus.$on("island-selected", (island) => {
+      this.selectedIsland = island;
+      console.log("selectedIsland", this.selectedIsland);
+    }),
+
+
+    this.fetchData()
+
+    // this.addAreas()
+  },
+
+  methods: {
+    fetchData(){
+      IslandService.getIslands()
+      .then(islands => {
+        this.islands = islands
+        eventBus.$emit("islands-loaded")
+        this.addAreas()
+        this.addPopulations()
+      });
+    },
+
+    addAreas(){
+      this.islands.forEach((island) => {
+        // console.log(island.name);
+        this.areas.push([island.name, island.area])
+      });
+    },
+
+    addPopulations(){
+      this.islands.forEach((island) => {
+        // console.log(island.name);
+        this.populations.push([island.name, island.population])
+      });
+      // const tempArray = [];
+      // this.islands.forEach((island) => {
+      //   tempArray.push([island.name, island.population])
+      // });
+      // // console.log(tempArray);
+      // tempArray.sort((a, b) => parseFloat(a.population) - parseFloat(b.population));
+      // console.log(tempArray);
+      // this.populations.concat(tempArray);
+    },
+
+    homeClick(){
+      this.selectedView = "home";
+    },
+
+    quizClick(){
+      this.selectedView = "quiz";
+    },
+
+    areaChartClick(){
+      this.selectedView = "a-chart";
+    },
+
+    populationChartClick(){
+      this.selectedView = "p-chart";
+    }
+  },
+
+  components: {
+    'islands-in-region-list': IslandRegionsList,
+    'welcome-guide': WelcomeGuide,
+    'island-map': MapComponent,
+    'island-details': IslandDetails,
+    'area-chart': AreaChart,
+    'population-chart': PopulationChart
+    // 'what-island-quiz': WhatIslandQuiz
   }
-},
-mounted(){
-  eventBus.$on("region-selected", (region) => {
-    this.selectedRegion = region;
-    console.log("selectedRegion", this.selectedRegion);
-  }),
-
-  eventBus.$on("island-selected", (island) => {
-    this.selectedIsland = island;
-    console.log("selectedIsland", this.selectedIsland);
-  }),
-
-
-  this.fetchData()
-
-  // this.addAreas()
-},
-
-methods: {
-  fetchData(){
-    IslandService.getIslands()
-    .then(islands => {
-      this.islands = islands
-      eventBus.$emit("islands-loaded")
-      this.addAreas()
-      this.addPopulations()
-    });
-  },
-
-  addAreas(){
-    this.islands.forEach((island) => {
-      // console.log(island.name);
-      this.areas.push([island.name, island.area])
-    });
-  },
-
-  addPopulations(){
-    this.islands.forEach((island) => {
-      // console.log(island.name);
-      this.populations.push([island.name, island.population])
-    });
-    // const tempArray = [];
-    // this.islands.forEach((island) => {
-    //   tempArray.push([island.name, island.population])
-    // });
-    // // console.log(tempArray);
-    // tempArray.sort((a, b) => parseFloat(a.population) - parseFloat(b.population));
-    // console.log(tempArray);
-    // this.populations.concat(tempArray);
-  },
-
-  homeClick(){
-    this.selectedView = "home";
-  },
-
-  quizClick(){
-    this.selectedView = "quiz";
-  },
-
-  areaChartClick(){
-    this.selectedView = "a-chart";
-  },
-
-  populationChartClick(){
-    this.selectedView = "p-chart";
-  }
-},
-
-components: {
-  'islands-in-region-list': IslandRegionsList,
-  'welcome-guide': WelcomeGuide,
-  'island-map': MapComponent,
-  'island-details': IslandDetails,
-  'area-chart': AreaChart,
-  'population-chart': PopulationChart
-  // 'what-island-quiz': WhatIslandQuiz
-}
 
 }
 
