@@ -89,7 +89,11 @@ export default {
     },
 
     addPopulations(){
-      this.islands.forEach((island) => {
+      const sortedByPopulation = this.islands.sort((island1, island2)=>{
+        return island2.population - island1.population
+      })
+      // console.log("islands sorted: ", sortedByPopulation);
+      sortedByPopulation.forEach((island) => {
         // console.log(island.name);
         this.populations.push([island.name, island.population])
       });
