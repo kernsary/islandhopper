@@ -14,7 +14,7 @@
         <island-details :selectedIsland="selectedIsland" v-if="selectedIsland"></island-details>
       </div>
       <div class="quiz" :selectedView="selectedView" v-if="selectedView === 'quiz'">
-        <!-- <what-island-quiz></what-island-quiz> -->
+        <quiz :questions="questions"></quiz>
       </div>
       <div class="chart" :selectedView="selectedView" v-if="selectedView === 'a-chart'">
         <area-chart :areas="areas"></area-chart>
@@ -122,7 +122,7 @@ export default {
       .then(questions => {
         this.questions = questions
         eventBus.$emit("questions-loaded")
-      }),
+      })},
 
     areaChartClick(){
       this.selectedView = "a-chart";
