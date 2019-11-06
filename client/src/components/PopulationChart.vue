@@ -1,8 +1,12 @@
 <template lang="html">
-  <GChart
-  type="BarChart"
-  :data="populationData"
-  />
+  <div class="">
+      <h1 class="chart-heading">Populations of islands</h1>
+    <GChart
+    type="BarChart"
+    :data="populationData"
+    :options="chartOptions"
+    />
+  </div>
 </template>
 
 <script>
@@ -12,14 +16,12 @@ export default {
   name: "population-chart",
   data() {
     return {
-      populationData: this.populations
-      // chartOptions: {
-      //   chart: {
-      //     // title: 'Company Performance',
-      //     // subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-      //     height: 2000
-      //   }
-      // }
+      populationData: this.populations,
+      chartOptions: {
+        height: 2000,
+        width: 1200,
+        legend: 'top'
+      }
     }
   },
   props: ["populations"],
@@ -30,4 +32,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.chart-heading {
+margin-left: 1rem;
+margin-bottom: 0rem;
+}
+
 </style>
