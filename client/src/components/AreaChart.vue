@@ -20,7 +20,8 @@ export default {
       chartOptions: {
         height: 2000,
         width: 1200,
-        legend: 'top'
+        legend: 'top',
+        chartArea: {'top': 20}
       }
     }
   },
