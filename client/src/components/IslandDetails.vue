@@ -1,20 +1,49 @@
 <template lang="html">
-  <div v-if="island" id="island-details">
 
-    <h2>{{ island.name }}</h2>
-    <h3>{{ island.population }}</h3>
+    <div class="island">
+      <h3>{{selectedIsland.name}}</h3>
+      <img :src="selectedIsland.image">
+      <p>{{ selectedIsland.information }}</p>
+      <p>Area: {{ selectedIsland.area }} hectares</p>
+      <p>Population: {{ selectedIsland.population }}</p>
+    </div>
 
-    <p>{{ island.information }}</p>
-
-  </div>
 </template>
 
 <script>
+import IslandService from '../services/IslandService'
+import { eventBus } from '../main.js'
 export default {
-  name: 'island-detail',
-  props: ["island"]
-};
+
+  name: "island-details",
+
+  props: ["selectedIsland"]
+
+}
 </script>
 
+
 <style lang="css" scoped>
+
+.island{
+  width: 40rem;
+  height: 35rem;
+  background-color: DeepSkyBlue;
+  color: White;
+  margin: 1rem 0.5rem;
+  padding: 1rem 2rem;
+  border: 0px none;
+  border-radius: 3%;
+}
+
+h3 {
+  font-size: 2.5em;
+  line-height: 0.5em;
+  margin-top: 0.5em;
+}
+
+img {
+  height: 20rem;
+}
+
 </style>
