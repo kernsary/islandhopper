@@ -14,7 +14,7 @@
         <island-details :selectedIsland="selectedIsland" v-if="selectedIsland"></island-details>
       </div>
       <div class="quiz" :selectedView="selectedView" v-if="selectedView === 'quiz'">
-        <quiz :questions="questions"></quiz>
+        <quiz :questions="questions" :islands="islands" :selectedIsland="selectedIsland"></quiz>
       </div>
       <div class="chart" :selectedView="selectedView" v-if="selectedView === 'a-chart'">
         <area-chart :areas="areas"></area-chart>

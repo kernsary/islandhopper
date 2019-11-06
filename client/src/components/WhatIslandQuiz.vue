@@ -42,7 +42,7 @@
     <div v-show="questionIndex === this.questions.length" v-on>
       <h3>Your Results</h3>
       <button type="results button" @click="addPoints()">See Which Island You Are</button>
-      <p>{{ result }}</p>
+      <island-details :selectedIsland="selectedIsland" v-if="selectedIsland && result"></island-details>
     </div>
 
   </div>
@@ -62,6 +62,7 @@
 <script>
 import { eventBus } from "../main.js"
 import QuizServices from "../services/QuizServices.js"
+import IslandDetails from "./IslandDetails.vue"
 // import app from "../App.vue"
 
 export default {
@@ -143,7 +144,7 @@ export default {
       //
     },
 
-    props: ["questions"],
+    props: ["questions", "islands", 'selectedIsland'],
 
     methods: {
       startQuiz() {
@@ -184,6 +185,12 @@ export default {
           return island2.points - island1.points});
           this.result = sortedByPoints[0].name;
           console.log("Result:", this.result);
+
+          this.islands.forEach((island) => {
+            if(island.name === this.result) {
+              this.selectedIsland = island
+            }
+          })
       },
 
         flatten() {
@@ -212,6 +219,10 @@ export default {
         //   })
         // }
 
+      },
+
+      components: {
+        "island-details": IslandDetails
       }
     };
 
