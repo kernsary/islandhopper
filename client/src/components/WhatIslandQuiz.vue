@@ -8,33 +8,53 @@
         Answer the following questions to find out wehat island suits you best!
       </p>
 
-      <button @click="startQuiz">Start The Quiz</button>
+      <button v-on:click="startQuiz()">Start The Quiz</button>
     </div>
 
-    <div v-if="questionsSection"
-    :question="questions[currentQuestion]"
-    v-on:answer="handleAnswer"
-    :question-number="currentQuestion+1" id="questionsection">
-    <h2>Question {{ questionNumber }}:</h2><br/>
-    <p>{{ question.text }} </p>
+    <div v-if="questionsSection" v-for="(question, index) in this.questions">
+      <div v-show="index === questionIndex">
 
-    <!-- <div>
-    <div v-for="(answer,index) in question.answers">
-    <input type="radio" :id="'answer'+index" name="currentQuestion" v-model="answer" :value="answer"><label :for="'answer'+index">{{answer}}</label><br/>
+        <h1> {{question.text}}</h1>
+
+        <ol>
+          <li v-for="option in question.options">
+            <label>
+                <input type="radio"
+                       v-bind:value="option.value"
+                       v-bind:name="index"
+                       v-model="userResponses[index]"
+                       >
+                       {{option.text}}
+              </label>
+          </li>
+
+        </ol>
+
+        <button class="previous button" v-if="questionIndex > 0" v-on:click="previousQuestion">
+          Previous
+        </button>
+        <button class="next button" v-on:click="nextQuestion" @click="result()">
+          Next
+        </button>
+      </div>
+    </div>
+
+    <div v-show="questionIndex === this.questions.length" >
+      <h3>Your Results</h3>
+      <p>
+        You are:
+      </p>
+    </div>
+
+      </div>
+
+    </div>
+
+</div>
+
+
+
   </div>
-</div> -->
-
-<button @click="submitAnswer">Submit</button>
-</div>
-</div>
-
-
-
-<!-- <div v-if="results" id="resultssection">
-
-</div> -->
-
-</div>
 
 
 
@@ -42,22 +62,25 @@
 
 <script>
 import { eventBus } from "../main.js"
+import QuizServices from "../services/QuizServices.js"
+// import app from "../App.vue"
 
 export default {
   data(){
     return{
-      introduction: false,
-      questionsSection: false,
+      introduction: true,
+      questionsSection: false ,
       results: false,
       title: "",
       currentQuestion: 0,
       answers: [],
-      score: 0,
-      answer: ""
+      answer: "",
+      userResponses: [],
+      questionIndex: 0
     }
   },
 
-  props: ['questions', 'question-number'],
+  props: ['questions'],
 
   // mounted(){
   //
@@ -73,29 +96,32 @@ export default {
 
   methods: {
     startQuiz() {
+      console.log(this.introduction);
+      console.log(this.questionsSection);
       this.introduction = false;
-      this.questions = true;
+      this.questionsSection = true;
+      console.log(`intro value ${this.introduction}`);
+      console.log(`questions value ${this.questionsSection}`);
+      console.log(this.questions);
     },
 
-    handleAnswer(event) {
-      this.answers[this.currentQuestion]=event.answer;
-      if((this.currentQuestion+1) === this.questions.length) {
-        this.handleResults();
-        this.questionStage = false;
-        this.resultsStage = true;
-      } else {
-        this.currentQuestion++;
-      }
+    nextQuestion() {
+      this.questionIndex++
+      console.log(this.userResponses);
     },
-    handleResults() {
-      this.questions.forEach((a, index) => {
-        if(this.answers[index] === a.answer) this.correct++;
-      });
+
+    previousQuestion() {
+      this.questionIndex--
     },
 
     submitAnswer() {
       this.$emit('answer', {answer:this.answer})
       this.answer = null
+    },
+
+    result() {
+      const sortedResponses = this.userResponses.flat();
+      console.log("Sorted Responses: ", sortedResponses);
     }
   }
 };

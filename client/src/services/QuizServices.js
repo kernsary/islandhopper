@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:3000/api/islands/'
+const baseURL = 'http://localhost:3000/api/questions/'
 
 export default {
   getQuestions(){

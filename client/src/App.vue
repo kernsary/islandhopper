@@ -9,7 +9,7 @@
 
       <island-map :islands="islands"></island-map>
       <island-grid :selectedIsland="selectedIsland" v-if="selectedIsland"></island-grid>
-      <quiz></quiz>
+      <quiz :questions="questions"></quiz>
 
     </div>
 
@@ -52,7 +52,6 @@ export default {
     this.fetchData(),
 
     this.fetchQuestions()
-    console.log(fetchQuestions);
   },
 
   methods: {

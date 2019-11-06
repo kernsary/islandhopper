@@ -4,5 +4,10 @@ export default {
   getIslands(){
     return fetch(baseURL)
     .then(res => res.json())
+  },
+
+  getQuestions(){
+    return fetch(baseURL)
+    .then(res => res.json())
   }
 }
