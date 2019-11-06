@@ -109,4 +109,8 @@ export default {
   margin: 1rem;
 }
 
+.leaflet-container {
+  cursor: default !important;
+}
+
 </style>
