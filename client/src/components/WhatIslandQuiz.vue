@@ -3,9 +3,9 @@
   <div id="quiz">
 
     <div v-if="introduction" id="intro">
-      <h1>Welcome to da quiz: {{title}}</h1>
+      <h1>Welcome to the quiz! |  Fàilte don cheisneachadh!</h1>
       <p>
-        Answer the following questions to find out wehat island suits you best!
+        Answer the following questions to find out which island suits you best!
       </p>
 
       <button v-on:click="startQuiz()">Start The Quiz</button>
@@ -42,6 +42,7 @@
     <div v-show="questionIndex === this.questions.length" v-on>
       <h3>Your Results</h3>
       <button type="results button" @click="addPoints()">See Which Island You Are</button>
+      <p>{{ result }}</p>
     </div>
 
   </div>
