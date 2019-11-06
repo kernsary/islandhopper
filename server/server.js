@@ -13,8 +13,11 @@ MongoClient.connect('mongodb://localhost:27017')
   .then((client) => {
   const db = client.db('islands_info');
   const islandsCollection = db.collection('islands');
+  const questionsCollection = db.collection('questions');
   const islandsRouter = createRouter(islandsCollection);
+  const questionsRouter = createRouter(questionsCollection);
   app.use('/api/islands', islandsRouter);
+  app.use('/api/questions', questionsRouter);
 })
 .catch(console.err);
 

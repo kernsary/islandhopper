@@ -428,67 +428,131 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/01/85/45/1854558_abe50de2.jpg`,
       "lat": 56.0208,
       "long": -6.2399
-    },
+    }
   ]);
 
-  db.questions.insertOne(
-    {
-      'title': "What Island ",
-      "questions": [
+  db.questions.insertMany(
+      [
         {
           "text": "Pick an ideal weekend!",
           "options": [
-            "Relax at home",
-            "Meeting up with friends/family",
-            "Two days of ACTION PACKED adventure",
-            "A busy day exploring the culture and heritage of the general vecinity"
+          {
+            "text": "Relax at home",
+            "value": ["Mainland", "Seil", "Westray"]
+          },
+          {
+            "text": "Meeting up with friends/family",
+            "value": ["Skye", "Islay", "Sandray"]
+          },
+          {
+            "text": "Two days of ACTION PACKED adventure",
+            "value": ["Arran", "Mull", "Tiree"]
+          },
+          {
+            "text": "A busy day exploring the culture and heritage of the general vicinity",
+            "value": ["Orkney Mainland", "Bute", "Yell"]
+          }
           ]
         },
         {
           "text": "Pick an activity",
-          "options": [
-            "Whisky Tasting",
-            "Hiking",
-            "Beach",
-            "Visiting a Castle"
+          "options": [{
+            "text": "Whisky Tasting",
+            "value": ["Islay", "Orkney Mainland"]
+          },
+          {
+            "text": "Hiking",
+            "value": ["Westray", "Skye", "Yell"]
+          },
+          {
+            "text": "Beach",
+            "value": ["Sandray", "Seil", "Tiree"]
+          },
+          {
+            "text": "Visiting a Castle",
+            "value": ["Arran", "Mull", "Bute", "Mainland"]
+          }
           ]
         },
         {
           "text": "Pick a mode of Transport",
-          "options": [
-            "Car",
-            "Plane",
-            "Bike",
-            "Boat"
+          "options": [{
+            "text": "Car",
+            "value": ["Mainland", "Orkney Mainland"]
+          },
+          {
+            "text": "Plane",
+            "value": ["Westray", "Yell"]
+          },
+          {
+            "text": "Bike",
+            "value": ["Arran", "Skye", "Islay", "Mull"]
+            },
+            {
+            "text": "Boat",
+            "value": ["Seil", "Tiree", "Sandray", "Bute"]
+            }
           ]
         },
         {
           "text": "Pick a food",
-          "options": [
-            "Cheese",
-            "Lobster",
-            "Haggis",
-            "Fish"
+          "options": [{
+            "text": "Cheese",
+            "value": ["Mull", "Orkney Mainland", "Islay"]
+          },
+          {
+            "text": "Lobster",
+            "value": ["Westray", "Skye"]
+          },
+          {
+            "text": "Haggis",
+            "value": ["Mainland", "Arran"]
+          },
+          {
+            "text": "Fish",
+            "value": ["Yell", "Seil", "Tiree", "Sandray", "Bute"]
+          }
           ]
         },
         {
           "text": "Pick a sport",
-          "options": [
-            "Stone Skimming",
-            "Surfing",
-            "Kayaking",
-            "Cycling"
+          "options": [{
+            "text": "Stone Skimming",
+            "value": ["Seil", "Westray"]
+          },
+          {
+            "text": "Surfing",
+            "value": ["Tiree", "Sandray"]
+          },
+          {
+            "text": "Kayaking",
+            "value": ["Skye", "Mull", "Arran"]
+          },
+          {
+            "text": "Cycling",
+            "value": ["Mainland", "Mainland Orkney", "Yell", "Islay", "Bute"]
+          }
           ]
         },
         {
           "text": "Pick an animal",
-          "options": [
-            "Otter",
-            "Seal (Kiss from a rose)",
-            "Eagle",
-            "Puffin"
+          "options": [{
+            "text": "Otter",
+            "value": ["Yell", "Skye", "Mull"]
+          },
+          {
+            "text": "Seal (Kiss from a rose)",
+            "value": ["Westray", "Mainland Orkney", "Tiree", "Arran"]
+          },
+          {
+            "text": "Eagle",
+            "value": ["Islay", "Bute", "Sandray"]
+          },
+          {
+            "text": "Puffin",
+            "value": ["Mainland", "Seil"]
+          }
           ]
         }
       ]
-    }
 );
