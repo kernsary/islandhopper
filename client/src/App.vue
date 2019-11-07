@@ -1,12 +1,14 @@
 <template>
 
   <div class="body-wrapper">
+
     <div class="nav-wrapper">
       <button class="nav-item" id="homelink" @click="homeClick">Islandhopper</button>
       <button class="nav-item" id="quizlink" @click="quizClick">Which island are you?</button>
       <button class="nav-item" id="areachartlink" @click="areaChartClick">Island sizes</button>
       <button class="nav-item" id="populationchartlink" @click="populationChartClick">Island populations</button>
     </div>
+
     <div class="main-container">
       <div class="home" :selectedView="selectedView" v-if="selectedView === 'home'">
         <island-map :islands="islands"></island-map>
@@ -197,5 +199,80 @@ island-map {
   width: 1500px;
   height: 300px;
 }
+
+#homelink{
+padding: 15px 25px;
+font-size: 24px;
+text-align: center;
+cursor: pointer;
+outline: none;
+color: #fff;
+background-color: darkblue;
+border: none;
+}
+
+#homelink:hover {
+  background-color: navy;}
+
+#homelink:active {
+background-color: salmon;
+transform: translateY(4px);
+}
+
+#areachartlink{
+padding: 15px 25px;
+font-size: 24px;
+text-align: center;
+cursor: pointer;
+outline: none;
+color: #fff;
+background-color: DodgerBlue;
+border: none;}
+
+
+#areachartlink:hover {
+  background-color: blue;}
+
+#areachartlink:active {
+background-color: Salmon;
+transform: translateY(4px);
+}
+
+#populationchartlink{
+padding: 15px 25px;
+font-size: 24px;
+text-align: center;
+cursor: pointer;
+outline: none;
+color: #fff;
+background-color: DodgerBlue;
+border: none;
+}
+
+#populationchartlink:hover {background-color: blue}
+
+#populationchartlink:active {
+background-color: Salmon;
+transform: translateY(4px);
+}
+
+#quizlink{
+padding: 15px 25px;
+font-size: 24px;
+text-align: center;
+cursor: pointer;
+outline: none;
+color: #fff;
+background-color: DodgerBlue;
+border: none;
+}
+
+#quizlink:hover {background-color: blue}
+
+#quizlink:active {
+background-color: Salmon;
+transform: translateY(4px);
+}
+
 
 </style>
