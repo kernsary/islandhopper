@@ -173,7 +173,6 @@ export default {
 
       addPoints() {
         this.flatten()
-        console.log("add points:", this.sortedResponses);
         this.sortedResponses.forEach((item) => {
           this.pointsArray.forEach((island) => {
             if(island.name === item) {
@@ -184,7 +183,6 @@ export default {
         const sortedByPoints = this.pointsArray.sort((island1, island2)=>{
           return island2.points - island1.points});
           this.result = sortedByPoints[0].name;
-          console.log("Result:", this.result);
 
           this.islands.forEach((island) => {
             if(island.name === this.result) {

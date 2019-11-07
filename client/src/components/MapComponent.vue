@@ -75,12 +75,12 @@ export default {
     //     // }
     //   });
     // }
-  },
-  watch: {
-    islands: function(newValue) {
-      this.islandLabels(newValue)
-    }
-  },
+  }
+  // watch: {
+  //   islands: function(newValue) {
+  //     this.islandLabels(newValue)
+  //   }
+  // },
 
 
 

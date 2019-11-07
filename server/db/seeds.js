@@ -154,7 +154,7 @@ db.islands.insertMany([
       "region": "Mull group",
       "area": 7834,
       "population": 653,
-      "information": "Tiree has sandy beaches almost all the way round it, which is why it is a big centre for surfing. It has also got distinctive black and white 'giraffe'houses.",
+      "information": "Tiree has sandy beaches almost all the way round it, which is why it is a big centre for surfing. It has also got distinctive black and white 'giraffe' houses.",
       "image": `https://s0.geograph.org.uk/photos/08/92/089210_1dde99e8.jpg`,
       "lat": 56.4932,
       "long": -6.9070
@@ -342,7 +342,7 @@ db.islands.insertMany([
 
     {
       "name": "Kerrera",
-      "region": "Islay group",
+      "region": "Mull group",
       "area": 1214,
       "population": 34,
       "information": "Kerrera lies close to the mainland and provides shelter for Oban harbour. It has lots of lumpy hills and a herd of wild goats live there.",
