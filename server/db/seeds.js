@@ -37,7 +37,7 @@ db.islands.insertMany([
       "region": "Mull group",
       "area": 87535,
       "population": 2800,
-      "information": "Mull has lots of hills and some huge cliffs, and is known for wildlife and for the painted houses in Tobermory.",
+      "information": "Mull is known for its wildlife, the painted houses in Tobermory, and its world famous Mull Cheddar.",
       "image":`https://s0.geograph.org.uk/geophotos/01/52/85/1528569_9e361a22.jpg`,
       "lat": 56.4392,
       "long": -6.0009
@@ -335,7 +335,7 @@ db.islands.insertMany([
       "area": 1329,
       "population": 551,
       "information": "Seil is a picturesque former slate-mining island that is linked to the mainland by and old hump-backed bridge known as 'The Bridge Over the Atlantic'.",
-      "image": `https://s0.geograph.org.uk/photos/00/56/005681_5865841d.jpg`,
+      "image": ` https://resources.stuff.co.nz/content/dam/images/1/n/x/r/t/0/image.related.StuffLandscapeSixteenByNine.710x400.1nxrst.png/1516222306239.jpg`,
       "lat": 56.30,
       "long": -5.62
     },
@@ -432,6 +432,16 @@ db.islands.insertMany([
       "image": `https://s0.geograph.org.uk/geophotos/01/85/45/1854558_abe50de2.jpg`,
       "lat": 56.0208,
       "long": -6.2399
+    },
+    {
+      "name": "Mainland",
+      "region": "Mainland",
+      "area": 80077,
+      "population": 5438000,
+      "information": "Stick to the mainland, island life is not a life for you!",
+      "image": `https://aspenwoolf.co.uk/wp-content/uploads/2016/12/11-facts-about-edinburgh-you-might-not-know.jpg`,
+      "lat": 56.4907,
+      "long": -4.2026
     }
   ]);
 
