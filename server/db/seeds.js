@@ -436,8 +436,8 @@ db.islands.insertMany([
     {
       "name": "Mainland",
       "region": "Mainland",
-      "area": 80077,
-      "population": 5438000,
+      // "area": 80077,
+      // "population": 5438000,
       "information": "Stick to the mainland, island life is not a life for you!",
       "image": `https://aspenwoolf.co.uk/wp-content/uploads/2016/12/11-facts-about-edinburgh-you-might-not-know.jpg`,
       "lat": 56.4907,
@@ -555,7 +555,7 @@ db.islands.insertMany([
             "value": ["Yell", "Skye", "Mull"]
           },
           {
-            "text": "Seal (Kiss from a rose)",
+            "text": "Seal (Kiss From a Rose)",
             "value": ["Westray", "Mainland Orkney", "Tiree", "Arran"]
           },
           {
