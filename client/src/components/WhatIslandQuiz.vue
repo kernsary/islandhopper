@@ -44,7 +44,7 @@
       </div>
 
       <div v-show="questionIndex === this.questions.length" v-on>
-        <button id="startButton" type="results button" @click="addPoints()" v-if="!selectedIsland">Reveal Your Island </button>
+        <button id="startButton" type="results button" @click="addPoints()" >Reveal Your Island </button>
         <island-details :selectedIsland="selectedIsland" v-if="selectedIsland && result"></island-details>
       </div>
 
@@ -248,19 +248,6 @@ li {
 
 li:last-child {
   border: none;
-}
-
-li a {
-  text-decoration: none;
-  color: #000;
-  display: block;
-  width: 200px;
-
-  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
-  transition: font-size 0.3s ease, background-color 0.3s ease;
 }
 
 li a:hover {
