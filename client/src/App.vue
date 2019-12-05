@@ -87,7 +87,6 @@ export default {
 
     addAreas(){
       this.islands.forEach((island) => {
-        // console.log(island.name);
         this.areas.push([island.name, island.area])
       });
     },
@@ -96,19 +95,10 @@ export default {
       const sortedByPopulation = this.islands.sort((island1, island2)=>{
         return island2.population - island1.population
       })
-      // console.log("islands sorted: ", sortedByPopulation);
       sortedByPopulation.forEach((island) => {
-        // console.log(island.name);
         this.populations.push([island.name, island.population])
       });
-      // const tempArray = [];
-      // this.islands.forEach((island) => {
-      //   tempArray.push([island.name, island.population])
-      // });
-      // // console.log(tempArray);
-      // tempArray.sort((a, b) => parseFloat(a.population) - parseFloat(b.population));
-      // console.log(tempArray);
-      // this.populations.concat(tempArray);
+
     },
 
     homeClick(){
@@ -143,7 +133,6 @@ export default {
     'area-chart': AreaChart,
     'population-chart': PopulationChart,
     'quiz': WhatIslandQuiz
-    // 'what-island-quiz': WhatIslandQuiz
   }
 
 }
@@ -165,8 +154,6 @@ export default {
 }
 
 .nav-item {
-  /* width: 18rem;
-  height: 4rem; */
   font-size: 2rem;
   font-weight: bold;
   background-color: DeepSkyBlue;

@@ -63,7 +63,6 @@
 import { eventBus } from "../main.js"
 import QuizServices from "../services/QuizServices.js"
 import IslandDetails from "./IslandDetails.vue"
-// import app from "../App.vue"
 
 export default {
   data(){
@@ -130,18 +129,6 @@ export default {
         }]
       }
 
-
-
-      // mounted(){
-      //
-      //   fetch(quizQuestions)
-      //   .then(res => res.json())
-      //   .then(res => {
-      //     this.title = res.title;
-      //     this.questions = res.questions;
-      //     this.introduction = true;
-      //   })
-      //
     },
 
     props: ["questions", "islands", 'selectedIsland'],
@@ -197,25 +184,6 @@ export default {
           console.log(this.pointsArray[0].points);
         },
 
-
-        //
-        //  unique() {
-        //   return this.launches.map((launch) => {
-        //     return launch.rocket.second_stage.payloads[0].nationality;
-        //   })
-        //   .filter((uniqueLaunch, index, array) => {
-        //     return array.indexOf(uniqueLaunch) === index;
-        //   })
-        // },
-        //
-        // chartData() {
-        //   return this.uniqueNationalities.map((uniqueNation) => {
-        //     const numberOfOccurrences = this.nationalities.reduce((accumulator, nation) => {
-        //       return accumulator + (nation === uniqueNation);
-        //     }, 0);
-        //     return [uniqueNation, numberOfOccurrences]
-        //   })
-        // }
 
       },
 
