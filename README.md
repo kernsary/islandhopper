@@ -29,3 +29,5 @@ npm i
 npm run serve (leave running, and open a new tab if you want to use the terminal for anything else)
 
 Then go to the browser and go to localhost:8080 to use the app.
+
+When you are finished with the app, go to the terminal and use Ctrl C in each of the three 'running' tabs to shut down the running processes.
