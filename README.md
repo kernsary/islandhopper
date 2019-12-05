@@ -13,14 +13,19 @@ To run the app from the terminal:
 cd server
 
 npm i
+
 mongod (leave running and open a new tab
+
 npm run seeds
+
 npm run server:dev (leave running and open a new tab)
 
 cd ..
+
 cd client
 
 npm i
+
 npm run serve (leave running, and open a new tab if you want to use the terminal for anything else)
 
 Then go to the browser and go to localhost:8080 to use the app.
