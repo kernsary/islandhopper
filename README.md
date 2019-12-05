@@ -14,7 +14,7 @@ cd server
 
 npm i
 
-mongod (leave running and open a new tab
+mongod (leave running and open a new tab)
 
 npm run seeds
 
