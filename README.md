@@ -32,7 +32,7 @@ Then go to the browser and go to localhost:8080 to use the app.
 
 When you are finished with the app, go to the terminal and use Ctrl C in each of the three 'running' tabs to shut down the running processes.
 
-The app meets the requirements of the brief below.
+The app meets the requirements of the brief below, and was created as a group project with three other CodeClan students.
 
 Project brief:
 
