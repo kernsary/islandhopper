@@ -1,4 +1,4 @@
-# islands
+# islandhopper
 
 This is a web app allowing the user to view 47 Scottish islands on a map, and click on an island to see details of that island.
 The user can navigate to charts comparing the sizes and populations of the islands, or to a quiz to decide 'Which island are you?'.
