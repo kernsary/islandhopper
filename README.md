@@ -6,8 +6,6 @@ The user can navigate to charts comparing the sizes and populations of the islan
 The app is written in JavaScript. The back end uses Express.js to create the server, and the front end uses Vue.js.
 Data is persisted in a Mongo database. The map is created using Vue-2-Leaflet, and the charts using Google Charts.
 
-The most up-to-date working version of the app is on the develop branch.
-
 To run the app from the terminal:
 
 cd server
