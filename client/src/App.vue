@@ -1,12 +1,14 @@
 <template>
 
   <div class="body-wrapper">
+
     <div class="nav-wrapper">
       <button class="nav-item" id="homelink" @click="homeClick">Islandhopper</button>
       <button class="nav-item" id="quizlink" @click="quizClick">Which island are you?</button>
       <button class="nav-item" id="areachartlink" @click="areaChartClick">Island sizes</button>
       <button class="nav-item" id="populationchartlink" @click="populationChartClick">Island populations</button>
     </div>
+
     <div class="main-container">
       <div class="home" :selectedView="selectedView" v-if="selectedView === 'home'">
         <island-map :islands="islands"></island-map>
@@ -85,7 +87,6 @@ export default {
 
     addAreas(){
       this.islands.forEach((island) => {
-        // console.log(island.name);
         this.areas.push([island.name, island.area])
       });
     },
@@ -94,19 +95,10 @@ export default {
       const sortedByPopulation = this.islands.sort((island1, island2)=>{
         return island2.population - island1.population
       })
-      // console.log("islands sorted: ", sortedByPopulation);
       sortedByPopulation.forEach((island) => {
-        // console.log(island.name);
         this.populations.push([island.name, island.population])
       });
-      // const tempArray = [];
-      // this.islands.forEach((island) => {
-      //   tempArray.push([island.name, island.population])
-      // });
-      // // console.log(tempArray);
-      // tempArray.sort((a, b) => parseFloat(a.population) - parseFloat(b.population));
-      // console.log(tempArray);
-      // this.populations.concat(tempArray);
+
     },
 
     homeClick(){
@@ -141,7 +133,6 @@ export default {
     'area-chart': AreaChart,
     'population-chart': PopulationChart,
     'quiz': WhatIslandQuiz
-    // 'what-island-quiz': WhatIslandQuiz
   }
 
 }
@@ -163,8 +154,6 @@ export default {
 }
 
 .nav-item {
-  /* width: 18rem;
-  height: 4rem; */
   font-size: 2rem;
   font-weight: bold;
   background-color: DeepSkyBlue;
@@ -197,5 +186,80 @@ island-map {
   width: 1500px;
   height: 300px;
 }
+
+#homelink{
+padding: 15px 25px;
+font-size: 24px;
+text-align: center;
+cursor: pointer;
+outline: none;
+color: #fff;
+background-color: darkblue;
+border: none;
+}
+
+#homelink:hover {
+  background-color: navy;}
+
+#homelink:active {
+background-color: salmon;
+transform: translateY(4px);
+}
+
+#areachartlink{
+padding: 15px 25px;
+font-size: 24px;
+text-align: center;
+cursor: pointer;
+outline: none;
+color: #fff;
+background-color: DodgerBlue;
+border: none;}
+
+
+#areachartlink:hover {
+  background-color: blue;}
+
+#areachartlink:active {
+background-color: Salmon;
+transform: translateY(4px);
+}
+
+#populationchartlink{
+padding: 15px 25px;
+font-size: 24px;
+text-align: center;
+cursor: pointer;
+outline: none;
+color: #fff;
+background-color: DodgerBlue;
+border: none;
+}
+
+#populationchartlink:hover {background-color: blue}
+
+#populationchartlink:active {
+background-color: Salmon;
+transform: translateY(4px);
+}
+
+#quizlink{
+padding: 15px 25px;
+font-size: 24px;
+text-align: center;
+cursor: pointer;
+outline: none;
+color: #fff;
+background-color: DodgerBlue;
+border: none;
+}
+
+#quizlink:hover {background-color: blue}
+
+#quizlink:active {
+background-color: Salmon;
+transform: translateY(4px);
+}
+
 
 </style>
