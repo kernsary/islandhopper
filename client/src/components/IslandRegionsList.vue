@@ -22,4 +22,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+h3 {
+  font-size: 2.5em;
+  line-height: 0.5em;
+  margin-top: 0.5em;
+}
 </style>
